@@ -82,17 +82,16 @@ body {
 }
 
 .brandbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: end;
   gap: 18px;
   background: #f0f3f6;
   color: #24314a;
   padding: 12px 16px;
   border-bottom: 1px solid #d5dbe3
 }
-
-.brandgroup { display: flex; align-items: center; gap: 12px }
+.brandgroup { display: flex; align-items: flex-start; gap: 12px }
 
 .brandmark {
   display: inline-block;
@@ -122,26 +121,28 @@ body {
 
 .mainnav {
   display: flex;
-  gap: 16px;
+  gap: 14px;
   align-items: center;
+  justify-content: flex-end;
   background: transparent;
   padding: 0;
 }
 
 .menu-link {
-  background: #cfd9eb;
+  appearance: none;
+  background: transparent;
   color: #24314a;
-  border: 1px solid #b8c5dc;
-  border-radius: 8px;
-  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 8px;
   font-weight: 700;
-  cursor: pointer
+  cursor: pointer;
 }
-
 .menu-link.active {
-  background: #24314a;
-  color: #fff
+  background: rgba(36,49,74,.12);
+  color: #24314a
 }
+.menu-link:hover { background: rgba(36,49,74,.08) }
 
 .mega {
   display: none;
