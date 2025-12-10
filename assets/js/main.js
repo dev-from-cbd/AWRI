@@ -11,6 +11,12 @@ const kbItems = [...document.querySelectorAll('.kb-list .list-item')];
 const menuLinks = [...document.querySelectorAll('.menu-link')];
 const brandbar = document.querySelector('.brandbar');
 const megas = { rd: document.getElementById('mega-rd'), services: document.getElementById('mega-services'), affinity: document.getElementById('mega-affinity'), about: document.getElementById('mega-about') };
+
+function positionMega(el) {
+  if (!brandbar || !el) return;
+  const rect = brandbar.getBoundingClientRect();
+  el.style.setProperty('--mega-top', `${Math.round(rect.bottom)}px`);
+}
 const routes = {
   home: document.getElementById('page-home'),
   'data-hub': document.getElementById('page-hub'),
@@ -70,6 +76,7 @@ function setMenu(key) {
   Object.entries(megas).forEach(([k, el]) => {
     const on = k === state.activeMenu;
     el.classList.toggle('show', on);
+    if (on) positionMega(el);
   });
   menuLinks.forEach(b => b.classList.toggle('active', b.dataset.menu === state.activeMenu));
 }
@@ -137,6 +144,13 @@ Object.values(megas).forEach(el => {
       hideMenus();
     }
   });
+});
+
+window.addEventListener('resize', () => {
+  if (state.activeMenu) { positionMega(megas[state.activeMenu]); }
+});
+window.addEventListener('scroll', () => {
+  if (state.activeMenu) { positionMega(megas[state.activeMenu]); }
 });
 
 updateAuthUI();
