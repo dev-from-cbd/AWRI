@@ -140,6 +140,9 @@ body {
   border: none;
   border-radius: 6px;
   padding: 6px 8px;
+  display: inline-block;
+  font-family: inherit;
+  font-size: 14px;
   font-weight: 700;
   cursor: pointer;
   text-decoration: none
