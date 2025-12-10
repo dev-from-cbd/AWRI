@@ -144,15 +144,12 @@ body {
   cursor: pointer;
   text-decoration: none
 }
-
 .menu-link.active {
-  background: rgba(36, 49, 74, .12);
+  background: rgba(36,49,74,.12);
   color: #24314a
 }
-
-.menu-link:hover {
-  background: rgba(36, 49, 74, .08)
-}
+.menu-link:hover { background: rgba(36,49,74,.08); text-decoration: none }
+.mainnav a.menu-link { text-decoration: none }
 
 .mega {
   display: none;

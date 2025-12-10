@@ -9,6 +9,7 @@ const kbSearch=document.getElementById('kbSearch');
 const tagButtons=[...document.querySelectorAll('.tag')];
 const kbItems=[...document.querySelectorAll('.kb-list .list-item')];
 const menuLinks=[...document.querySelectorAll('.menu-link')];
+const brandbar=document.querySelector('.brandbar');
 const megas={rd:document.getElementById('mega-rd'),services:document.getElementById('mega-services'),affinity:document.getElementById('mega-affinity'),about:document.getElementById('mega-about')};
 const routes={
   home:document.getElementById('page-home'),
@@ -64,8 +65,8 @@ function filterKB(){
   });
 }
 
-function showMenu(key){
-  state.activeMenu=state.activeMenu===key?null:key;
+function setMenu(key){
+  state.activeMenu=key;
   Object.entries(megas).forEach(([k,el])=>{
     const on=k===state.activeMenu;
     el.classList.toggle('show',on);
@@ -113,10 +114,20 @@ signinBtn.addEventListener('click',()=>{
 
 kbSearch.addEventListener('input',filterKB);
 tagButtons.forEach(b=>b.addEventListener('click',()=>applyTag(b.dataset.tag)));
-menuLinks.forEach(b=>b.addEventListener('click',()=>showMenu(b.dataset.menu)));
+menuLinks.forEach(b=>{
+  b.addEventListener('mouseenter',()=>setMenu(b.dataset.menu));
+  if(b.tagName==='BUTTON'){
+    b.addEventListener('click',()=>setMenu(b.dataset.menu));
+  }
+});
 document.addEventListener('click',e=>{
   const inside=e.target.closest('.mega')||e.target.closest('.mainnav');
   if(!inside) hideMenus();
+});
+
+brandbar.addEventListener('mouseleave',e=>{
+  const to=e.relatedTarget;
+  if(!(to&&to.closest('.mega'))) hideMenus();
 });
 
 updateAuthUI();
