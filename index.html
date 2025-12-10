@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Research Intelligence Hub</title>
+  <link rel="stylesheet" href="assets/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-art" aria-hidden="true"></div>
+    <div class="hero-content">
+      <div class="auth-indicator" aria-label="Secure login required">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M17 9V7C17 4.791 15.209 3 13 3H11C8.791 3 7 4.791 7 7V9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><rect x="5" y="9" width="14" height="12" rx="2" stroke="currentColor" stroke-width="2"/></svg>
+        <span>Secure Access Required</span>
+      </div>
+      <h1>Research Intelligence Hub: Data, Insights, and Collaboration</h1>
+      <p class="subhead">Accelerating wine science through structured data access, interactive reporting, and reproducible research workflows.</p>
+      <div class="hero-actions">
+        <button id="signinBtn" class="btn primary">Sign In</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="layout">
+    <aside class="sidebar" aria-label="Navigation">
+      <nav>
+        <a href="#datasets" class="nav-item disabled" data-requires-auth="true">Research Data Sets</a>
+        <a href="#visualizations" class="nav-item disabled" data-requires-auth="true">Interactive Reporting Dashboards</a>
+        <a href="#notebooks" class="nav-item disabled" data-requires-auth="true">Collaborative Data Notebooks</a>
+        <a href="#knowledge" class="nav-item disabled" data-requires-auth="true">Knowledge Base / Wiki</a>
+        <a href="#profile" class="nav-item disabled" data-requires-auth="true">User Profile / Settings</a>
+      </nav>
+    </aside>
+
+    <section class="content">
+      <section id="dashboardIntro" class="card intro">
+        <h2>User Dashboard</h2>
+        <p>Personalized landing view providing quick access to datasets, dashboards, notebooks, and documentation. Sign in to access secure content.</p>
+      </section>
+
+      <section id="visualizations" class="card">
+        <div class="section-header">
+          <h2>Interactive Reporting Dashboards</h2>
+          <div class="filters">
+            <label>
+              <span>Date Range</span>
+              <select id="filterDate">
+                <option value="all">All</option>
+                <option value="1y">Last 1 year</option>
+                <option value="5y">Last 5 years</option>
+                <option value="10y">Last 10 years</option>
+              </select>
+            </label>
+            <label>
+              <span>Region</span>
+              <select id="filterRegion">
+                <option value="all">All</option>
+                <option value="barossa">Barossa</option>
+                <option value="mclaren">McLaren Vale</option>
+                <option value="clare">Clare Valley</option>
+              </select>
+            </label>
+            <label>
+              <span>Research Area</span>
+              <select id="filterArea">
+                <option value="all">All</option>
+                <option value="weather">Weather</option>
+                <option value="analysis">Wine Analysis</option>
+                <option value="industry">Industry Metrics</option>
+              </select>
+            </label>
+          </div>
+        </div>
+        <div class="charts">
+          <div class="chart-card" data-region="barossa" data-area="weather" data-date="10y">
+            <h3>Historical Weather Trends</h3>
+            <div class="chart" role="img" aria-label="Line chart of temperature over time">
+              <svg viewBox="0 0 400 160" preserveAspectRatio="none">
+                <polyline points="0,120 50,90 100,110 150,60 200,80 250,50 300,70 350,40 400,60" fill="none" stroke="var(--accent-1)" stroke-width="3"/>
+              </svg>
+            </div>
+            <p class="chart-meta">GI Region: Barossa</p>
+          </div>
+          <div class="chart-card" data-region="mclaren" data-area="analysis" data-date="5y">
+            <h3>Wine Analysis Distribution</h3>
+            <div class="chart" role="img" aria-label="Bar chart of pH and alcohol">
+              <svg viewBox="0 0 400 160" preserveAspectRatio="none">
+                <rect x="40" y="40" width="40" height="80" fill="var(--accent-2)"/>
+                <rect x="120" y="20" width="40" height="100" fill="var(--accent-3)"/>
+                <rect x="200" y="60" width="40" height="60" fill="var(--accent-2)"/>
+                <rect x="280" y="30" width="40" height="90" fill="var(--accent-3)"/>
+              </svg>
+            </div>
+            <p class="chart-meta">Metrics: pH, Alcohol Content</p>
+          </div>
+          <div class="chart-card" data-region="clare" data-area="industry" data-date="1y">
+            <h3>Industry Sustainability Index</h3>
+            <div class="chart" role="img" aria-label="Heatmap visualization">
+              <svg viewBox="0 0 400 160" preserveAspectRatio="none">
+                <rect x="30" y="30" width="60" height="40" fill="var(--accent-4)"/>
+                <rect x="100" y="30" width="60" height="40" fill="var(--accent-5)"/>
+                <rect x="170" y="30" width="60" height="40" fill="var(--accent-6)"/>
+                <rect x="30" y="80" width="60" height="40" fill="var(--accent-6)"/>
+                <rect x="100" y="80" width="60" height="40" fill="var(--accent-4)"/>
+                <rect x="170" y="80" width="60" height="40" fill="var(--accent-5)"/>
+              </svg>
+            </div>
+            <p class="chart-meta">Adoption Metrics</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="notebooks" class="card">
+        <div class="section-header">
+          <h2>Collaborative Data Notebooks</h2>
+          <span class="badge">Requires JupyterHub access</span>
+        </div>
+        <div class="list">
+          <a href="#" class="list-item" data-requires-auth="true">
+            <div class="list-title">GI Weather Correlation Analysis</div>
+            <div class="list-meta">Author: A. Smith • Updated: 2025-09-12</div>
+          </a>
+          <a href="#" class="list-item" data-requires-auth="true">
+            <div class="list-title">Wine Chemistry Trends: pH vs Alcohol</div>
+            <div class="list-meta">Author: J. Lee • Updated: 2025-08-04</div>
+          </a>
+          <a href="#" class="list-item" data-requires-auth="true">
+            <div class="list-title">Sustainability Survey Benchmarking</div>
+            <div class="list-meta">Author: K. Nguyen • Updated: 2025-07-28</div>
+          </a>
+        </div>
+      </section>
+
+      <section id="knowledge" class="card">
+        <div class="section-header">
+          <h2>Structured Knowledge Base / Wiki</h2>
+          <div class="kb-controls">
+            <input id="kbSearch" type="search" placeholder="Search documentation" aria-label="Search Knowledge Base">
+            <div class="tags">
+              <button class="tag" data-tag="methodology">Methodology</button>
+              <button class="tag" data-tag="equipment">Equipment</button>
+              <button class="tag" data-tag="positions">AWRI Positions</button>
+            </div>
+          </div>
+        </div>
+        <div class="list kb-list">
+          <a href="#" class="list-item" data-tags="methodology">
+            <div class="list-title">Spectrophotometric Analysis Protocols</div>
+            <div class="list-meta">Category: Methodology</div>
+          </a>
+          <a href="#" class="list-item" data-tags="equipment">
+            <div class="list-title">GC-MS Maintenance and Calibration</div>
+            <div class="list-meta">Category: Equipment</div>
+          </a>
+          <a href="#" class="list-item" data-tags="positions">
+            <div class="list-title">AWRI Position: Micro-oxygenation Practices</div>
+            <div class="list-meta">Category: AWRI Positions</div>
+          </a>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <span>All data housed on this platform is subject to strict AWRI security protocols and data integrity checks. Unauthorized access is prohibited.</span>
+    </div>
+  </footer>
+
+  <script src="assets/app.js" defer></script>
+</body>
+</html>
