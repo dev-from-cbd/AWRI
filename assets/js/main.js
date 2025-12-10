@@ -1,4 +1,4 @@
-const state={authenticated:false,activeTag:null};
+const state={authenticated:false,activeTag:null,activeMenu:null};
 const signinBtn=document.getElementById('signinBtn');
 const navItems=[...document.querySelectorAll('[data-requires-auth]')];
 const filterDate=document.getElementById('filterDate');
@@ -8,6 +8,15 @@ const chartCards=[...document.querySelectorAll('.chart-card')];
 const kbSearch=document.getElementById('kbSearch');
 const tagButtons=[...document.querySelectorAll('.tag')];
 const kbItems=[...document.querySelectorAll('.kb-list .list-item')];
+const menuLinks=[...document.querySelectorAll('.menu-link')];
+const megas={rd:document.getElementById('mega-rd'),services:document.getElementById('mega-services'),affinity:document.getElementById('mega-affinity'),about:document.getElementById('mega-about')};
+const routes={
+  home:document.getElementById('page-home'),
+  'data-hub':document.getElementById('page-hub'),
+  notebooks:document.getElementById('page-notebooks'),
+  knowledge:document.getElementById('page-knowledge'),
+};
+const generic=document.getElementById('page-generic');
 
 function updateAuthUI(){
   const disabledClass='disabled';
@@ -55,6 +64,43 @@ function filterKB(){
   });
 }
 
+function showMenu(key){
+  state.activeMenu=state.activeMenu===key?null:key;
+  Object.entries(megas).forEach(([k,el])=>{
+    const on=k===state.activeMenu;
+    el.classList.toggle('show',on);
+  });
+  menuLinks.forEach(b=>b.classList.toggle('active',b.dataset.menu===state.activeMenu));
+}
+
+function hideMenus(){
+  state.activeMenu=null;
+  Object.values(megas).forEach(el=>el.classList.remove('show'));
+  menuLinks.forEach(b=>b.classList.remove('active'));
+}
+
+function showRoute(key){
+  const known=routes[key];
+  Object.values(routes).forEach(el=>el&&el.classList.remove('active'));
+  if(known){
+    known.classList.add('active');
+    generic.classList.remove('active');
+  }else{
+    const title=key.replace(/-/g,' ').toUpperCase();
+    generic.innerHTML=`<h2>${title}</h2><p>Антарктический раздел в разработке. Содержимое появится скоро.</p>`;
+    generic.classList.add('active');
+  }
+}
+
+function initRouting(){
+  const key=(location.hash||'#home').slice(1);
+  showRoute(key);
+  window.addEventListener('hashchange',()=>{
+    const k=(location.hash||'#home').slice(1);
+    showRoute(k);
+  });
+}
+
 signinBtn.addEventListener('click',()=>{
   state.authenticated=!state.authenticated;
   signinBtn.textContent=state.authenticated?'Sign Out':'Sign In';
@@ -67,7 +113,13 @@ signinBtn.addEventListener('click',()=>{
 
 kbSearch.addEventListener('input',filterKB);
 tagButtons.forEach(b=>b.addEventListener('click',()=>applyTag(b.dataset.tag)));
+menuLinks.forEach(b=>b.addEventListener('click',()=>showMenu(b.dataset.menu)));
+document.addEventListener('click',e=>{
+  const inside=e.target.closest('.mega')||e.target.closest('.mainnav');
+  if(!inside) hideMenus();
+});
 
 updateAuthUI();
 filterCharts();
 filterKB();
+initRouting();

@@ -1,24 +1,132 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Research Intelligence Hub</title>
-  <link rel="stylesheet" href="assets/styles.css">
+  <title>The Antarctic Wine Research Institute</title>
+  <link rel="stylesheet" href="assets/css/main.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
+
 <body>
+  <div class="topbar">
+    <div class="topbar-left">
+      <a class="social" href="https://au.linkedin.com/company/the-australian-wine-research-institute"
+        aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+      <a class="social" href="https://www.facebook.com/The.AWRI/" aria-label="Facebook"><i
+          class="fa-brands fa-facebook-f"></i></a>
+      <a class="social" href="https://www.youtube.com/c/TheAWRI" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+      <a class="social" href="https://x.com/The_AWRI" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+      <a class="social" href="https://www.instagram.com/theawri" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+    </div>
+    <div class="topbar-right">
+      <a class="top-link" href="#home">HOME</a>
+      <a class="top-link" href="#contacts">CONTACTS</a>
+      <a class="top-link" href="#logout">LOGOUT</a>
+      <a class="top-link" href="#subscribe">SUBSCRIBE</a>
+      <div class="searchbox"><input id="topSearch" type="search" placeholder="SEARCH"></div>
+    </div>
+  </div>
+
+  <div class="brandbar">
+    <div class="brandmark">AWRI</div>
+    <div class="brandtext">Antarctic Wine Research Institute</div>
+  </div>
+
+  <nav class="mainnav">
+    <button class="menu-link" data-menu="rd">RESEARCH & DEVELOPMENT</button>
+    <button class="menu-link" data-menu="services">SERVICES TO INDUSTRY</button>
+    <button class="menu-link" data-menu="affinity">AFFINITY LABS</button>
+    <button class="menu-link" data-menu="about">ABOUT THE AWRI</button>
+  </nav>
+
+  <div class="mega" id="mega-rd">
+    <div class="mega-col">
+      <a class="mega-item" href="#rd-plan">Research, Development & Extension Plan</a>
+      <a class="mega-item" href="#rd-projects">Research, Development and Extension Projects</a>
+      <a class="mega-item" href="#metabolomics">Metabolomics SA</a>
+      <a class="mega-item" href="#data-hub">Data Visualization & Reporting Hub</a>
+    </div>
+    <div class="mega-col">
+      <a class="mega-item" href="#genomics">South Australian Genomics Centre</a>
+      <a class="mega-item" href="#wmcc">Wine Microorganism Culture Collection</a>
+    </div>
+  </div>
+
+  <div class="mega" id="mega-services">
+    <div class="mega-col">
+      <div class="mega-title">AWRI Helpdesk</div>
+      <a class="mega-item" href="#helpdesk-winemaking">Winemaking</a>
+      <a class="mega-item" href="#helpdesk-viticulture">Viticulture</a>
+      <a class="mega-item" href="#helpdesk-regulatory">Regulatory Information</a>
+      <a class="mega-item" href="#helpdesk-swa">Sustainable Winegrowing</a>
+      <a class="mega-item" href="#helpdesk-health">Wine and Health</a>
+      <a class="mega-item" href="#helpdesk-agrochemicals">Agrochemicals</a>
+    </div>
+    <div class="mega-col">
+      <div class="mega-title">Education</div>
+      <a class="mega-item" href="#education-events">Events Calendar</a>
+      <a class="mega-item" href="#education-podcast">Podcast – AWRI Decanted</a>
+      <a class="mega-item" href="#education-webinars">Webinars</a>
+      <a class="mega-item" href="#education-seminars">Seminars and Workshops</a>
+      <a class="mega-item" href="#education-courses">Advanced Courses</a>
+    </div>
+    <div class="mega-col">
+      <div class="mega-title">Information Services</div>
+      <a class="mega-item" href="#info-publications">AWRI Publications</a>
+      <a class="mega-item" href="#info-bulletins">Bulletins</a>
+      <a class="mega-item" href="#info-facts">Fact Sheets and Manuals</a>
+      <a class="mega-item" href="#info-packs">Information Packs</a>
+      <a class="mega-item" href="#info-library">Library Services</a>
+      <a class="mega-item" href="#info-review">Technical Review</a>
+      <a class="mega-item" href="#info-booklet">Agrochemicals Booklet</a>
+    </div>
+    <div class="mega-col">
+      <div class="mega-title">Facilities</div>
+      <a class="mega-item" href="#showrunner">Showrunner</a>
+      <a class="mega-item" href="#nolo">No- and Low-alcohol Research Facility</a>
+    </div>
+  </div>
+
+  <div class="mega" id="mega-affinity">
+    <div class="mega-col">
+      <a class="mega-item" href="#affinity-overview">Affinity Labs Overview</a>
+      <a class="mega-item" href="#affinity-services">Testing and Services</a>
+    </div>
+  </div>
+
+  <div class="mega" id="mega-about">
+    <div class="mega-col">
+      <a class="mega-item" href="#awri-board">AWRI Board</a>
+      <a class="mega-item" href="#governance">Corporate Governance</a>
+      <a class="mega-item" href="#management">Management Team</a>
+      <a class="mega-item" href="#reports">Annual Reports</a>
+      <a class="mega-item" href="#media">Media Releases</a>
+      <a class="mega-item" href="#employment">People and Employment</a>
+      <a class="mega-item" href="#careers">Careers and Positions Vacant</a>
+      <a class="mega-item" href="#staff">Staff Profiles</a>
+    </div>
+  </div>
+
   <header class="hero">
     <div class="hero-art" aria-hidden="true"></div>
     <div class="hero-content">
       <div class="auth-indicator" aria-label="Secure login required">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M17 9V7C17 4.791 15.209 3 13 3H11C8.791 3 7 4.791 7 7V9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><rect x="5" y="9" width="14" height="12" rx="2" stroke="currentColor" stroke-width="2"/></svg>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true">
+          <path d="M17 9V7C17 4.791 15.209 3 13 3H11C8.791 3 7 4.791 7 7V9" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" />
+          <rect x="5" y="9" width="14" height="12" rx="2" stroke="currentColor" stroke-width="2" />
+        </svg>
         <span>Secure Access Required</span>
       </div>
       <h1>Research Intelligence Hub: Data, Insights, and Collaboration</h1>
-      <p class="subhead">Accelerating wine science through structured data access, interactive reporting, and reproducible research workflows.</p>
+      <p class="subhead">Accelerating wine science through structured data access, interactive reporting, and
+        reproducible research workflows.</p>
       <div class="hero-actions">
         <button id="signinBtn" class="btn primary">Sign In</button>
       </div>
@@ -29,7 +137,8 @@
     <aside class="sidebar" aria-label="Navigation">
       <nav>
         <a href="#datasets" class="nav-item disabled" data-requires-auth="true">Research Data Sets</a>
-        <a href="#visualizations" class="nav-item disabled" data-requires-auth="true">Interactive Reporting Dashboards</a>
+        <a href="#visualizations" class="nav-item disabled" data-requires-auth="true">Interactive Reporting
+          Dashboards</a>
         <a href="#notebooks" class="nav-item disabled" data-requires-auth="true">Collaborative Data Notebooks</a>
         <a href="#knowledge" class="nav-item disabled" data-requires-auth="true">Knowledge Base / Wiki</a>
         <a href="#profile" class="nav-item disabled" data-requires-auth="true">User Profile / Settings</a>
@@ -37,12 +146,37 @@
     </aside>
 
     <section class="content">
-      <section id="dashboardIntro" class="card intro">
-        <h2>User Dashboard</h2>
-        <p>Personalized landing view providing quick access to datasets, dashboards, notebooks, and documentation. Sign in to access secure content.</p>
+      <section id="page-home" class="card intro route">
+        <h2>The Antarctic Wine Research Institute</h2>
+        <div class="home-icons">
+          <div class="home-icon">
+            <div class="icon-circle">🍇</div>
+            <div class="icon-label">Viticulture</div>
+          </div>
+          <div class="home-icon">
+            <div class="icon-circle">🍷</div>
+            <div class="icon-label">Winemaking</div>
+          </div>
+          <div class="home-icon">
+            <div class="icon-circle">🔥</div>
+            <div class="icon-label">Smoke Taint</div>
+          </div>
+          <div class="home-icon">
+            <div class="icon-circle">🌿</div>
+            <div class="icon-label">Sustainable</div>
+          </div>
+          <div class="home-icon">
+            <div class="icon-circle">📋</div>
+            <div class="icon-label">Research Projects</div>
+          </div>
+          <div class="home-icon">
+            <div class="icon-circle">🔬</div>
+            <div class="icon-label">Innovating For</div>
+          </div>
+        </div>
       </section>
 
-      <section id="visualizations" class="card">
+      <section id="page-hub" class="card route">
         <div class="section-header">
           <h2>Interactive Reporting Dashboards</h2>
           <div class="filters">
@@ -80,7 +214,8 @@
             <h3>Historical Weather Trends</h3>
             <div class="chart" role="img" aria-label="Line chart of temperature over time">
               <svg viewBox="0 0 400 160" preserveAspectRatio="none">
-                <polyline points="0,120 50,90 100,110 150,60 200,80 250,50 300,70 350,40 400,60" fill="none" stroke="var(--accent-1)" stroke-width="3"/>
+                <polyline points="0,120 50,90 100,110 150,60 200,80 250,50 300,70 350,40 400,60" fill="none"
+                  stroke="var(--accent-1)" stroke-width="3" />
               </svg>
             </div>
             <p class="chart-meta">GI Region: Barossa</p>
@@ -89,10 +224,10 @@
             <h3>Wine Analysis Distribution</h3>
             <div class="chart" role="img" aria-label="Bar chart of pH and alcohol">
               <svg viewBox="0 0 400 160" preserveAspectRatio="none">
-                <rect x="40" y="40" width="40" height="80" fill="var(--accent-2)"/>
-                <rect x="120" y="20" width="40" height="100" fill="var(--accent-3)"/>
-                <rect x="200" y="60" width="40" height="60" fill="var(--accent-2)"/>
-                <rect x="280" y="30" width="40" height="90" fill="var(--accent-3)"/>
+                <rect x="40" y="40" width="40" height="80" fill="var(--accent-2)" />
+                <rect x="120" y="20" width="40" height="100" fill="var(--accent-3)" />
+                <rect x="200" y="60" width="40" height="60" fill="var(--accent-2)" />
+                <rect x="280" y="30" width="40" height="90" fill="var(--accent-3)" />
               </svg>
             </div>
             <p class="chart-meta">Metrics: pH, Alcohol Content</p>
@@ -101,12 +236,12 @@
             <h3>Industry Sustainability Index</h3>
             <div class="chart" role="img" aria-label="Heatmap visualization">
               <svg viewBox="0 0 400 160" preserveAspectRatio="none">
-                <rect x="30" y="30" width="60" height="40" fill="var(--accent-4)"/>
-                <rect x="100" y="30" width="60" height="40" fill="var(--accent-5)"/>
-                <rect x="170" y="30" width="60" height="40" fill="var(--accent-6)"/>
-                <rect x="30" y="80" width="60" height="40" fill="var(--accent-6)"/>
-                <rect x="100" y="80" width="60" height="40" fill="var(--accent-4)"/>
-                <rect x="170" y="80" width="60" height="40" fill="var(--accent-5)"/>
+                <rect x="30" y="30" width="60" height="40" fill="var(--accent-4)" />
+                <rect x="100" y="30" width="60" height="40" fill="var(--accent-5)" />
+                <rect x="170" y="30" width="60" height="40" fill="var(--accent-6)" />
+                <rect x="30" y="80" width="60" height="40" fill="var(--accent-6)" />
+                <rect x="100" y="80" width="60" height="40" fill="var(--accent-4)" />
+                <rect x="170" y="80" width="60" height="40" fill="var(--accent-5)" />
               </svg>
             </div>
             <p class="chart-meta">Adoption Metrics</p>
@@ -114,7 +249,7 @@
         </div>
       </section>
 
-      <section id="notebooks" class="card">
+      <section id="page-notebooks" class="card route">
         <div class="section-header">
           <h2>Collaborative Data Notebooks</h2>
           <span class="badge">Requires JupyterHub access</span>
@@ -135,7 +270,7 @@
         </div>
       </section>
 
-      <section id="knowledge" class="card">
+      <section id="page-knowledge" class="card route">
         <div class="section-header">
           <h2>Structured Knowledge Base / Wiki</h2>
           <div class="kb-controls">
@@ -162,15 +297,139 @@
           </a>
         </div>
       </section>
+
+      <section id="page-generic" class="card route"></section>
+      <div class="section-header">
+        <h2>Interactive Reporting Dashboards</h2>
+        <div class="filters">
+          <label>
+            <span>Date Range</span>
+            <select id="filterDate">
+              <option value="all">All</option>
+              <option value="1y">Last 1 year</option>
+              <option value="5y">Last 5 years</option>
+              <option value="10y">Last 10 years</option>
+            </select>
+          </label>
+          <label>
+            <span>Region</span>
+            <select id="filterRegion">
+              <option value="all">All</option>
+              <option value="barossa">Barossa</option>
+              <option value="mclaren">McLaren Vale</option>
+              <option value="clare">Clare Valley</option>
+            </select>
+          </label>
+          <label>
+            <span>Research Area</span>
+            <select id="filterArea">
+              <option value="all">All</option>
+              <option value="weather">Weather</option>
+              <option value="analysis">Wine Analysis</option>
+              <option value="industry">Industry Metrics</option>
+            </select>
+          </label>
+        </div>
+      </div>
+      <div class="charts">
+        <div class="chart-card" data-region="barossa" data-area="weather" data-date="10y">
+          <h3>Historical Weather Trends</h3>
+          <div class="chart" role="img" aria-label="Line chart of temperature over time">
+            <svg viewBox="0 0 400 160" preserveAspectRatio="none">
+              <polyline points="0,120 50,90 100,110 150,60 200,80 250,50 300,70 350,40 400,60" fill="none"
+                stroke="var(--accent-1)" stroke-width="3" />
+            </svg>
+          </div>
+          <p class="chart-meta">GI Region: Barossa</p>
+        </div>
+        <div class="chart-card" data-region="mclaren" data-area="analysis" data-date="5y">
+          <h3>Wine Analysis Distribution</h3>
+          <div class="chart" role="img" aria-label="Bar chart of pH and alcohol">
+            <svg viewBox="0 0 400 160" preserveAspectRatio="none">
+              <rect x="40" y="40" width="40" height="80" fill="var(--accent-2)" />
+              <rect x="120" y="20" width="40" height="100" fill="var(--accent-3)" />
+              <rect x="200" y="60" width="40" height="60" fill="var(--accent-2)" />
+              <rect x="280" y="30" width="40" height="90" fill="var(--accent-3)" />
+            </svg>
+          </div>
+          <p class="chart-meta">Metrics: pH, Alcohol Content</p>
+        </div>
+        <div class="chart-card" data-region="clare" data-area="industry" data-date="1y">
+          <h3>Industry Sustainability Index</h3>
+          <div class="chart" role="img" aria-label="Heatmap visualization">
+            <svg viewBox="0 0 400 160" preserveAspectRatio="none">
+              <rect x="30" y="30" width="60" height="40" fill="var(--accent-4)" />
+              <rect x="100" y="30" width="60" height="40" fill="var(--accent-5)" />
+              <rect x="170" y="30" width="60" height="40" fill="var(--accent-6)" />
+              <rect x="30" y="80" width="60" height="40" fill="var(--accent-6)" />
+              <rect x="100" y="80" width="60" height="40" fill="var(--accent-4)" />
+              <rect x="170" y="80" width="60" height="40" fill="var(--accent-5)" />
+            </svg>
+          </div>
+          <p class="chart-meta">Adoption Metrics</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="page-notebooks" class="card route">
+      <div class="section-header">
+        <h2>Collaborative Data Notebooks</h2>
+        <span class="badge">Requires JupyterHub access</span>
+      </div>
+      <div class="list">
+        <a href="#" class="list-item" data-requires-auth="true">
+          <div class="list-title">GI Weather Correlation Analysis</div>
+          <div class="list-meta">Author: A. Smith • Updated: 2025-09-12</div>
+        </a>
+        <a href="#" class="list-item" data-requires-auth="true">
+          <div class="list-title">Wine Chemistry Trends: pH vs Alcohol</div>
+          <div class="list-meta">Author: J. Lee • Updated: 2025-08-04</div>
+        </a>
+        <a href="#" class="list-item" data-requires-auth="true">
+          <div class="list-title">Sustainability Survey Benchmarking</div>
+          <div class="list-meta">Author: K. Nguyen • Updated: 2025-07-28</div>
+        </a>
+      </div>
+    </section>
+
+    <section id="page-knowledge" class="card route">
+      <div class="section-header">
+        <h2>Structured Knowledge Base / Wiki</h2>
+        <div class="kb-controls">
+          <input id="kbSearch" type="search" placeholder="Search documentation" aria-label="Search Knowledge Base">
+          <div class="tags">
+            <button class="tag" data-tag="methodology">Methodology</button>
+            <button class="tag" data-tag="equipment">Equipment</button>
+            <button class="tag" data-tag="positions">AWRI Positions</button>
+          </div>
+        </div>
+      </div>
+      <div class="list kb-list">
+        <a href="#" class="list-item" data-tags="methodology">
+          <div class="list-title">Spectrophotometric Analysis Protocols</div>
+          <div class="list-meta">Category: Methodology</div>
+        </a>
+        <a href="#" class="list-item" data-tags="equipment">
+          <div class="list-title">GC-MS Maintenance and Calibration</div>
+          <div class="list-meta">Category: Equipment</div>
+        </a>
+        <a href="#" class="list-item" data-tags="positions">
+          <div class="list-title">AWRI Position: Micro-oxygenation Practices</div>
+          <div class="list-meta">Category: AWRI Positions</div>
+        </a>
+      </div>
+    </section>
     </section>
   </main>
 
   <footer class="footer">
     <div class="footer-content">
-      <span>All data housed on this platform is subject to strict AWRI security protocols and data integrity checks. Unauthorized access is prohibited.</span>
+      <span>All data housed on this platform is subject to strict AWRI security protocols and data integrity checks.
+        Unauthorized access is prohibited.</span>
     </div>
   </footer>
 
-  <script src="assets/app.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
 </body>
+
 </html>
