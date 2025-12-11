@@ -214,7 +214,7 @@ body {
     linear-gradient(0deg, rgba(255,255,255,.0), rgba(255,255,255,.0)),
     url('../images/bg/bg1.png');
   background-size: cover;
-  background-position: center 0px;
+  background-position: center -120px;
   will-change: background-position;
   border-bottom: 1px solid var(--border);
   box-shadow: 0 6px 18px rgba(0, 0, 0, .25);
