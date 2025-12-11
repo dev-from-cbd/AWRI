@@ -145,6 +145,7 @@ body {
   font-size: 14px;
   font-weight: 700;
   line-height: 1.2;
+  position: relative;
   cursor: pointer;
   text-decoration: none
 }
@@ -168,17 +169,25 @@ body {
   position: fixed;
   left: 0;
   right: 0;
-  top: var(--mega-top, 0px);
+  top: calc(var(--mega-top, 0px) + 8px);
   z-index: 40;
+  background: transparent;
+  padding: 0 16px
+}
+.mega.show { display: block }
+
+.mega-panel{
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
   grid-template-columns: repeat(5, minmax(180px, 1fr));
   gap: 16px;
   background: #2a3a57;
   color: #fff;
-  padding: 18px 16px
-}
-
-.mega.show {
-  display: grid
+  border-radius: 8px;
+  box-shadow: 0 10px 24px rgba(0,0,0,.35);
+  padding: 18px 20px;
+  border: 1px solid rgba(255,255,255,.12)
 }
 
 .mega-col {
@@ -200,6 +209,18 @@ body {
 
 .mega-item:hover {
   text-decoration: underline
+}
+
+.menu-link.active::after{
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -10px;
+  width: 0; height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid #2a3a57
 }
 
 .hero {
