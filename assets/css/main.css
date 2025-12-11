@@ -225,6 +225,10 @@ body {
   text-decoration: underline
 }
 
+.mega-item.bottom {
+  font-weight: 700
+}
+
 .menu-link.active::after {
   content: "";
   position: absolute;
@@ -238,7 +242,7 @@ body {
   border-top: 12px solid #32486f
 }
 
-#mega-services .mega-panel{ grid-template-columns: repeat(4, minmax(220px, 1fr)) }
+#mega-services .mega-panel{ grid-template-columns: repeat(5, minmax(220px, 1fr)) }
 
 .hero {
   position: relative;
