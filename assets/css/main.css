@@ -170,7 +170,7 @@ body {
   right: 0;
   top: var(--mega-top, 0px);
   z-index: 40;
-  grid-template-columns: repeat(4, minmax(160px, 1fr));
+  grid-template-columns: repeat(5, minmax(180px, 1fr));
   gap: 16px;
   background: #2a3a57;
   color: #fff;
@@ -533,7 +533,7 @@ body {
   }
 
   .brandmark {
-    font-size: 92px;
+    font-size: 100px;
     transform: scaleX(1.04)
   }
 }
