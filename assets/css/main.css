@@ -174,21 +174,29 @@ body {
   background: transparent;
   padding: 0 16px
 }
-.mega.show { display: block }
 
-.mega-panel{
+.mega.show {
+  display: block
+}
+
+.mega-panel {
   max-width: 1200px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(5, minmax(180px, 1fr));
-  gap: 16px;
-  background: #2a3a57;
+  align-items: start;
+  grid-template-columns: repeat(5, minmax(200px, 1fr));
+  gap: 22px;
+  background: #32486f;
   color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 10px 24px rgba(0,0,0,.35);
-  padding: 18px 20px;
-  border: 1px solid rgba(255,255,255,.12)
+  border-radius: 12px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, .35);
+  padding: 22px 24px;
+  border: 1px solid rgba(255, 255, 255, .12);
+  opacity: 0;
+  transform: translateY(-6px);
+  transition: opacity .18s ease, transform .18s ease
 }
+.mega.show .mega-panel{ opacity:1; transform:translateY(0) }
 
 .mega-col {
   display: flex;
@@ -198,30 +206,39 @@ body {
 
 .mega-title {
   font-weight: 700;
-  margin-bottom: 4px
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  font-size: 13px
 }
 
 .mega-item {
   color: #fff;
   text-decoration: none;
-  padding: 4px 0
+  display: block;
+  padding: 6px 0;
+  line-height: 1.35;
+  font-size: 14px
 }
 
 .mega-item:hover {
   text-decoration: underline
 }
 
-.menu-link.active::after{
+.menu-link.active::after {
   content: "";
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  bottom: -10px;
-  width: 0; height: 0;
+  bottom: -8px;
+  width: 0;
+  height: 0;
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
-  border-top: 10px solid #2a3a57
+  border-top: 12px solid #32486f
 }
+
+#mega-services .mega-panel{ grid-template-columns: repeat(4, minmax(220px, 1fr)) }
 
 .hero {
   position: relative;
@@ -232,7 +249,7 @@ body {
 .hero-art {
   height: 320px;
   background:
-    linear-gradient(0deg, rgba(255,255,255,.0), rgba(255,255,255,.0)),
+    linear-gradient(0deg, rgba(255, 255, 255, .0), rgba(255, 255, 255, .0)),
     url('../images/bg/bg1.png');
   background-size: cover;
   background-position: center -80px;

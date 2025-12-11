@@ -147,10 +147,10 @@ Object.values(megas).forEach(el => {
 });
 
 window.addEventListener('resize', () => {
-  if(state.activeMenu){ positionMega(megas[state.activeMenu]); }
+  if (state.activeMenu) { positionMega(megas[state.activeMenu]); }
 });
 window.addEventListener('scroll', () => {
-  if(state.activeMenu){ positionMega(megas[state.activeMenu]); }
+  if (state.activeMenu) { positionMega(megas[state.activeMenu]); }
 });
 
 const heroArt = document.querySelector('.hero-art');
@@ -158,15 +158,15 @@ let parallaxTick = false;
 const PARALLAX_BASE = -80;  // базовое смещение: больше винограда в кадре
 const PARALLAX_MIN = -260;  // нижний предел (не уходить слишком вверх)
 const PARALLAX_MAX = -40;   // верхний предел (не опускать слишком вниз)
-function applyParallax(){
-  if(!heroArt) return;
+function applyParallax() {
+  if (!heroArt) return;
   const y = window.scrollY || document.documentElement.scrollTop || 0;
   const raw = PARALLAX_BASE - Math.round(y * 0.25);
   const clamped = Math.max(PARALLAX_MIN, Math.min(PARALLAX_MAX, raw));
   heroArt.style.backgroundPosition = `center ${clamped}px`;
 }
 window.addEventListener('scroll', () => {
-  if(!parallaxTick){
+  if (!parallaxTick) {
     parallaxTick = true;
     requestAnimationFrame(() => { applyParallax(); parallaxTick = false; });
   }
