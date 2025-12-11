@@ -204,6 +204,14 @@ body {
   gap: 6px
 }
 
+.mega-bottom {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(200px, 1fr));
+  gap: 22px;
+  margin-top: 10px
+}
+
 .mega-title {
   font-weight: 700;
   margin-bottom: 8px;
