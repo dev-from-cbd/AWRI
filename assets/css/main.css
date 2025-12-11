@@ -204,13 +204,11 @@ body {
   gap: 6px
 }
 
-.mega-bottom {
-  grid-column: 1 / -1;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(200px, 1fr));
-  gap: 22px;
-  margin-top: 10px
-}
+.mega-bottom { grid-column: 1 / -1; display: contents }
+.mega-bottom .mega-item.bottom { margin-top: 10px }
+.mega-bottom .mega-item.bottom:nth-child(1) { grid-column: 1 }
+.mega-bottom .mega-item.bottom:nth-child(2) { grid-column: 2 }
+.mega-bottom .mega-item.bottom:nth-child(3) { grid-column: 3 }
 
 .mega-title {
   font-weight: 700;
