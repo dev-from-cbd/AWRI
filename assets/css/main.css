@@ -215,7 +215,10 @@ body {
   margin-bottom: 8px;
   text-transform: uppercase;
   letter-spacing: .04em;
-  font-size: 13px
+  font-size: 13px;
+  text-decoration: none;
+  color: inherit;
+  display: block
 }
 
 .mega-item {
