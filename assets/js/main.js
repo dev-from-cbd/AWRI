@@ -155,9 +155,9 @@ window.addEventListener('scroll', () => {
 
 const heroArt = document.querySelector('.hero-art');
 let parallaxTick = false;
-const PARALLAX_BASE = -120; // смещение, чтобы была видна гроздь винограда
+const PARALLAX_BASE = -80;  // базовое смещение: больше винограда в кадре
 const PARALLAX_MIN = -260;  // нижний предел (не уходить слишком вверх)
-const PARALLAX_MAX = -60;   // верхний предел (не опускать слишком вниз)
+const PARALLAX_MAX = -40;   // верхний предел (не опускать слишком вниз)
 function applyParallax(){
   if(!heroArt) return;
   const y = window.scrollY || document.documentElement.scrollTop || 0;
