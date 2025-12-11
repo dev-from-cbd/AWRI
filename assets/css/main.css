@@ -231,9 +231,8 @@ body {
   font-size: 14px
 }
 
-.mega-item:hover {
-  text-decoration: underline
-}
+.mega-panel a { text-transform: uppercase }
+.mega-panel a:hover { text-decoration: underline }
 
 .mega-item.bottom {
   font-weight: 700
