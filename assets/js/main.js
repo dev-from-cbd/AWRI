@@ -147,11 +147,27 @@ Object.values(megas).forEach(el => {
 });
 
 window.addEventListener('resize', () => {
-  if (state.activeMenu) { positionMega(megas[state.activeMenu]); }
+  if(state.activeMenu){ positionMega(megas[state.activeMenu]); }
 });
 window.addEventListener('scroll', () => {
-  if (state.activeMenu) { positionMega(megas[state.activeMenu]); }
+  if(state.activeMenu){ positionMega(megas[state.activeMenu]); }
 });
+
+const heroArt = document.querySelector('.hero-art');
+let parallaxTick = false;
+function applyParallax(){
+  if(!heroArt) return;
+  const y = window.scrollY || document.documentElement.scrollTop || 0;
+  const offset = Math.round(y * 0.25);
+  heroArt.style.backgroundPosition = `center ${-offset}px`;
+}
+window.addEventListener('scroll', () => {
+  if(!parallaxTick){
+    parallaxTick = true;
+    requestAnimationFrame(() => { applyParallax(); parallaxTick = false; });
+  }
+});
+applyParallax();
 
 updateAuthUI();
 filterCharts();
