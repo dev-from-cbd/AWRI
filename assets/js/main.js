@@ -11,6 +11,7 @@ const kbItems = [...document.querySelectorAll('.kb-list .list-item')];
 const menuLinks = [...document.querySelectorAll('.menu-link')];
 const brandbar = document.querySelector('.brandbar');
 const megas = { rd: document.getElementById('mega-rd'), services: document.getElementById('mega-services'), affinity: document.getElementById('mega-affinity'), about: document.getElementById('mega-about') };
+let hideTimer = null;
 
 function positionMega(el) {
   if (!brandbar || !el) return;
@@ -134,15 +135,22 @@ document.addEventListener('click', e => {
 
 brandbar.addEventListener('mouseleave', e => {
   const to = e.relatedTarget;
-  if (!(to && to.closest('.mega'))) hideMenus();
+  if (to && to.closest('.mega')) return;
+  clearTimeout(hideTimer);
+  hideTimer = setTimeout(() => {
+    const overMega = document.querySelector(':hover') && document.querySelector(':hover').closest('.mega');
+    if (!overMega) hideMenus();
+  }, 140);
 });
+brandbar.addEventListener('mouseenter', () => { if (hideTimer) { clearTimeout(hideTimer); hideTimer = null; } });
 
 Object.values(megas).forEach(el => {
+  el.addEventListener('mouseenter', () => { if (hideTimer) { clearTimeout(hideTimer); hideTimer = null; } });
   el.addEventListener('mouseleave', e => {
     const to = e.relatedTarget;
-    if (!(to && (to.closest('.mega') || to.closest('.mainnav') || to.closest('.brandbar')))) {
-      hideMenus();
-    }
+    if (to && (to.closest('.mega') || to.closest('.mainnav') || to.closest('.brandbar'))) return;
+    clearTimeout(hideTimer);
+    hideTimer = setTimeout(() => hideMenus(), 140);
   });
 });
 

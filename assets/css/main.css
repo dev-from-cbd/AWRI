@@ -169,7 +169,7 @@ body {
   position: fixed;
   left: 0;
   right: 0;
-  top: calc(var(--mega-top, 0px) + 8px);
+  top: calc(var(--mega-top, 0px));
   z-index: 40;
   background: transparent;
   padding: 0 16px
@@ -220,6 +220,7 @@ body {
   color: inherit;
   display: block
 }
+.mega-title:link, .mega-title:visited { color: inherit }
 
 .mega-item {
   color: #fff;
