@@ -234,9 +234,9 @@ body {
 .mega-panel a { text-transform: uppercase }
 .mega-panel a:hover { text-decoration: underline }
 
-.mega-item.icon-right { display: flex; align-items: center; justify-content: space-between; gap: 10px }
+.mega-item.icon-right { display: flex; align-items: baseline; gap: 4px }
 .mega-item.icon-right i { color: #fff; opacity: .9; transition: transform .15s ease }
-.mega-item.icon-right:hover i { transform: translateX(2px) }
+.mega-item.icon-right:hover i { transform: translateX(1px) }
 
 .mega-item.bottom {
   font-weight: 700
