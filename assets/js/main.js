@@ -137,6 +137,12 @@ menuLinks.forEach(b => {
   if (b.tagName === 'BUTTON' && key && megas[key] && key !== 'affinity') {
     b.addEventListener('click', () => setMenu(key));
   }
+  if (b.tagName === 'A' && key && megas[key] && key !== 'affinity') {
+    b.addEventListener('click', (e) => {
+      e.preventDefault();
+      setMenu(key);
+    });
+  }
 });
 document.addEventListener('click', e => {
   const inside = e.target.closest('.mega') || e.target.closest('.mainnav');
