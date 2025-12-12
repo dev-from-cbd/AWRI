@@ -130,9 +130,12 @@ if (kbSearch) {
 }
 tagButtons.forEach(b => b.addEventListener('click', () => applyTag(b.dataset.tag)));
 menuLinks.forEach(b => {
-  b.addEventListener('mouseenter', () => setMenu(b.dataset.menu));
-  if (b.tagName === 'BUTTON') {
-    b.addEventListener('click', () => setMenu(b.dataset.menu));
+  const key = b.dataset.menu;
+  if (key && megas[key] && key !== 'affinity') {
+    b.addEventListener('mouseenter', () => setMenu(key));
+  }
+  if (b.tagName === 'BUTTON' && key && megas[key] && key !== 'affinity') {
+    b.addEventListener('click', () => setMenu(key));
   }
 });
 document.addEventListener('click', e => {
