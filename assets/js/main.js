@@ -35,7 +35,10 @@ function updateAuthUI() {
       el.classList.add(disabledClass);
     }
   });
-  document.querySelector('.auth-indicator span').textContent = state.authenticated ? 'Secure Access Granted' : 'Secure Access Required';
+  const indicator = document.querySelector('.auth-indicator span');
+  if (indicator) {
+    indicator.textContent = state.authenticated ? 'Secure Access Granted' : 'Secure Access Required';
+  }
 }
 
 function filterCharts() {
@@ -110,11 +113,13 @@ function initRouting() {
   });
 }
 
-signinBtn.addEventListener('click', () => {
-  state.authenticated = !state.authenticated;
-  signinBtn.textContent = state.authenticated ? 'Sign Out' : 'Sign In';
-  updateAuthUI();
-});
+if (signinBtn) {
+  signinBtn.addEventListener('click', () => {
+    state.authenticated = !state.authenticated;
+    signinBtn.textContent = state.authenticated ? 'Sign Out' : 'Sign In';
+    updateAuthUI();
+  });
+}
 
 [filterDate, filterRegion, filterArea].forEach(el => {
   el.addEventListener('change', filterCharts);
