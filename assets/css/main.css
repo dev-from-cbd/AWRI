@@ -326,6 +326,8 @@ body {
   justify-content: center;
   box-shadow: 0 6px 16px rgba(0,0,0,.12);
   transition: transform .2s ease, box-shadow .2s ease;
+  position: relative;
+  overflow: hidden;
 }
 
 .home-icon-circle .fa-solid {
@@ -359,8 +361,8 @@ body {
   position: absolute;
   inset: 0;
   border-radius: 50%;
-  background: linear-gradient(120deg, rgba(255,255,255,.18), rgba(255,255,255,0) 60%);
-  transform: translateX(-140%);
+  background: linear-gradient(115deg, rgba(255,255,255,.22), rgba(255,255,255,0) 55%);
+  transform: translateX(-120%);
   pointer-events: none;
 }
 
