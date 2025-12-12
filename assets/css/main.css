@@ -342,6 +342,11 @@ body {
   filter: drop-shadow(0 1px 1px rgba(0,0,0,.2));
 }
 
+.home-icon-circle svg.icon-grapes {
+  width: 90px;
+  height: 90px;
+}
+
 .home-icon-circle > * {
   position: relative;
   z-index: 1;
