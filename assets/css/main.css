@@ -399,46 +399,14 @@ body {
 
 .layout {
   display: grid;
-  grid-template-columns: 260px 1fr;
-  gap: 16px;
+  grid-template-columns: 1fr;
+  gap: 0;
   max-width: 1200px;
   margin: 24px auto;
   padding: 0 24px
 }
 
-.sidebar {
-  position: sticky;
-  top: 16px;
-  height: fit-content;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 14px
-}
-
-.sidebar nav {
-  display: flex;
-  flex-direction: column
-}
-
-.nav-item {
-  padding: 12px 14px;
-  color: var(--text);
-  text-decoration: none;
-  border-bottom: 1px solid var(--border)
-}
-
-.nav-item:last-child {
-  border-bottom: none
-}
-
-.nav-item.disabled {
-  opacity: .55;
-  pointer-events: none
-}
-
-.nav-item:hover {
-  background: var(--surface-2)
-}
+/* sidebar styles removed for single-column layout */
 
 .content {
   display: flex;

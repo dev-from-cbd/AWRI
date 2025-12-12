@@ -121,11 +121,13 @@ if (signinBtn) {
   });
 }
 
-[filterDate, filterRegion, filterArea].forEach(el => {
+[filterDate, filterRegion, filterArea].filter(Boolean).forEach(el => {
   el.addEventListener('change', filterCharts);
 });
 
-kbSearch.addEventListener('input', filterKB);
+if (kbSearch) {
+  kbSearch.addEventListener('input', filterKB);
+}
 tagButtons.forEach(b => b.addEventListener('click', () => applyTag(b.dataset.tag)));
 menuLinks.forEach(b => {
   b.addEventListener('mouseenter', () => setMenu(b.dataset.menu));
@@ -138,18 +140,20 @@ document.addEventListener('click', e => {
   if (!inside) hideMenus();
 });
 
-brandbar.addEventListener('mouseleave', e => {
-  const to = e.relatedTarget;
-  if (to && to.closest('.mega')) return;
-  clearTimeout(hideTimer);
-  hideTimer = setTimeout(() => {
-    const overMega = document.querySelector(':hover') && document.querySelector(':hover').closest('.mega');
-    if (!overMega) hideMenus();
-  }, 140);
-});
-brandbar.addEventListener('mouseenter', () => { if (hideTimer) { clearTimeout(hideTimer); hideTimer = null; } });
+if (brandbar) {
+  brandbar.addEventListener('mouseleave', e => {
+    const to = e.relatedTarget;
+    if (to && to.closest('.mega')) return;
+    clearTimeout(hideTimer);
+    hideTimer = setTimeout(() => {
+      const overMega = document.querySelector(':hover') && document.querySelector(':hover').closest('.mega');
+      if (!overMega) hideMenus();
+    }, 140);
+  });
+  brandbar.addEventListener('mouseenter', () => { if (hideTimer) { clearTimeout(hideTimer); hideTimer = null; } });
+}
 
-Object.values(megas).forEach(el => {
+Object.values(megas).filter(Boolean).forEach(el => {
   el.addEventListener('mouseenter', () => { if (hideTimer) { clearTimeout(hideTimer); hideTimer = null; } });
   el.addEventListener('mouseleave', e => {
     const to = e.relatedTarget;
