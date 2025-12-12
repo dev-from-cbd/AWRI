@@ -354,12 +354,42 @@ body {
   display: block;
 }
 
-.home-icon--viticulture { background: #97b5e3; }
-.home-icon--winemaking { background: #a64545; }
-.home-icon--smoke { background: #d8782f; }
-.home-icon--sustainable { background: #556c3b; }
-.home-icon--projects { background: #e0b54a; }
-.home-icon--innovate { background: #c57a63; }
+.home-icon-circle::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: linear-gradient(120deg, rgba(255,255,255,.18), rgba(255,255,255,0) 60%);
+  transform: translateX(-140%);
+  pointer-events: none;
+}
+
+@keyframes shine {
+  to { transform: translateX(140%); }
+}
+
+.home-tile:hover .home-icon-circle::after {
+  animation: shine .9s ease;
+}
+
+.home-icon--viticulture {
+  background: radial-gradient(100% 100% at 30% 20%, #b7cbea 0%, #8fb0de 60%, #7ea3d7 100%);
+}
+.home-icon--winemaking {
+  background: radial-gradient(100% 100% at 30% 20%, #b66161 0%, #a64545 60%, #8b2f2f 100%);
+}
+.home-icon--smoke {
+  background: radial-gradient(100% 100% at 30% 20%, #e49763 0%, #d8782f 60%, #c76525 100%);
+}
+.home-icon--sustainable {
+  background: radial-gradient(100% 100% at 30% 20%, #6b8551 0%, #556c3b 60%, #445630 100%);
+}
+.home-icon--projects {
+  background: radial-gradient(100% 100% at 30% 20%, #f0ce76 0%, #e0b54a 60%, #d3a441 100%);
+}
+.home-icon--innovate {
+  background: radial-gradient(100% 100% at 30% 20%, #d49580 0%, #c57a63 60%, #b66754 100%);
+}
 
 .hero-content {
   max-width: 1200px;
