@@ -318,8 +318,8 @@ body {
 }
 
 .home-icon-circle {
-  width: 92px;
-  height: 92px;
+  width: 108px;
+  height: 108px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -331,9 +331,20 @@ body {
 }
 
 .home-icon-circle .fa-solid {
-  font-size: 36px;
+  font-size: 48px;
   color: #ffffff;
   transition: transform .2s ease, opacity .2s ease;
+}
+
+.home-icon-circle svg {
+  width: 48px;
+  height: 48px;
+  filter: drop-shadow(0 1px 1px rgba(0,0,0,.2));
+}
+
+.home-icon-circle > * {
+  position: relative;
+  z-index: 1;
 }
 
 .home-tile .label {
@@ -372,6 +383,17 @@ body {
 
 .home-tile:hover .home-icon-circle::after {
   animation: shine .9s ease;
+}
+
+.home-icon-circle::before {
+  content: "";
+  position: absolute;
+  inset: 8px;
+  border-radius: 50%;
+  box-shadow:
+    inset 0 0 0 2px rgba(255,255,255,.35),
+    inset 0 14px 28px rgba(255,255,255,.12);
+  z-index: 0;
 }
 
 .home-icon--viticulture {
