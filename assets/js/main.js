@@ -149,6 +149,11 @@ document.addEventListener('click', e => {
   if (!inside) hideMenus();
 });
 
+function isPointerOverNav(target) {
+  if (!target) return false;
+  return !!(target.closest('.mega') || target.closest('.mainnav') || target.closest('.brandbar'));
+}
+
 if (brandbar) {
   brandbar.addEventListener('mouseleave', e => {
     const to = e.relatedTarget;
@@ -171,6 +176,18 @@ Object.values(megas).filter(Boolean).forEach(el => {
     hideTimer = setTimeout(() => hideMenus(), 140);
   });
 });
+
+// Robust auto-hide when pointer leaves all menu areas
+window.addEventListener('mousemove', e => {
+  if (!isPointerOverNav(e.target)) {
+    clearTimeout(hideTimer);
+    hideTimer = setTimeout(() => hideMenus(), 160);
+  } else {
+    if (hideTimer) { clearTimeout(hideTimer); hideTimer = null; }
+  }
+});
+window.addEventListener('mouseleave', () => hideMenus());
+window.addEventListener('keydown', e => { if (e.key === 'Escape') hideMenus(); });
 
 window.addEventListener('resize', () => {
   if (state.activeMenu) { positionMega(megas[state.activeMenu]); }
