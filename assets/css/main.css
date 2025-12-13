@@ -322,7 +322,10 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 10px;
+  text-decoration: none;
 }
+a.home-tile { text-decoration: none }
+a.home-tile:hover, a.home-tile:focus { text-decoration: none }
 
 .home-icon-circle {
   width: 108px;
@@ -352,6 +355,11 @@ body {
 .home-icon-circle svg.icon-grapes {
   width: 90px;
   height: 90px;
+}
+
+.home-icon-circle svg.icon-glass {
+  width: 104px;
+  height: 104px;
 }
 
 .home-icon-circle > * {
