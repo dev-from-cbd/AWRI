@@ -372,6 +372,11 @@ a.home-tile:hover, a.home-tile:focus { text-decoration: none }
   height: 90px;
 }
 
+.home-icon-circle svg.icon-clipboard {
+  width: 84px;
+  height: 84px;
+}
+
 .home-icon-circle > * {
   position: relative;
   z-index: 1;
