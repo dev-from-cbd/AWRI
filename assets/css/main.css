@@ -299,10 +299,10 @@ body {
 }
 
 .home-strip {
-  background: #ffffff;
-  color: #24314a;
-  border-top: 1px solid #e2e7ee;
-  border-bottom: 1px solid #e2e7ee;
+  background: transparent; /* show page background instead of white band */
+  color: var(--text);
+  border-top: 1px solid rgba(255,255,255,0.04);
+  border-bottom: 1px solid rgba(255,255,255,0.04);
 }
 
 .home-strip-inner {
@@ -391,7 +391,7 @@ a.home-tile:hover, a.home-tile:focus { text-decoration: none }
   font-size: 12px;
   font-weight: 600;
   text-align: center;
-  color: #24314a;
+  color: var(--text);
 }
 
 .home-tile:hover .home-icon-circle {
