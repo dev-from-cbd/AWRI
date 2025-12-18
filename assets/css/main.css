@@ -718,6 +718,32 @@ a.home-tile:hover, a.home-tile:focus { text-decoration: none }
   display: block
 }
 
+/* Latest News styles (ensure high-contrast links — no blue on dark backgrounds) */
+.latest-news {
+  max-width: 1200px;
+  margin: 24px auto 0;
+  padding: 22px;
+  background: var(--surface-2);
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.04);
+}
+.latest-news .section-header { text-align: center; padding-bottom: 14px; margin-bottom: 18px; border-bottom: 1px solid rgba(255,255,255,0.06); }
+.latest-news .section-header h2 { font-size: 30px; font-weight: 800; margin: 0 auto 8px; color: var(--text); }
+.news-list { display: grid; grid-template-columns: 1fr; gap: 18px; }
+.news-item { background: transparent; border-radius: 10px; padding: 18px; border: 1px solid rgba(255,255,255,0.03); transition: background .12s ease, transform .12s ease; }
+.news-item:hover { background: rgba(255,255,255,0.02); transform: translateY(-3px); }
+.news-link { display: block; text-decoration: none; color: var(--text); margin-bottom: 10px; }
+.news-title { color: var(--text); font-weight: 800; font-size: 18px; }
+.news-meta { color: var(--muted); font-size: 13px; margin-top: 6px; }
+.news-excerpt { color: var(--muted); margin-top: 10px; font-size: 15px; line-height: 1.45; }
+.news-more-link { color: var(--accent-4); font-weight: 800; display: inline-block; margin-top: 10px; font-size: 14px; }
+
+/* Force any anchor inside latest-news to be high-contrast (avoid blue-on-dark) */
+.latest-news a { color: var(--text); }
+.latest-news a:hover { color: var(--text); text-decoration: underline; }
+
+@media (min-width: 900px) { .news-list { grid-template-columns: repeat(4,1fr); } }
+
 @media (max-width: 980px) {
   .layout {
     grid-template-columns: 1fr
