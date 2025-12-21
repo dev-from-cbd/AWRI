@@ -276,13 +276,16 @@ const newsCarousel = {
     if (width < 900) {
       this.itemsPerView = 1; // 1 item on mobile
     } else {
-      this.itemsPerView = 4; // 4 items on desktop
+      this.itemsPerView = 2.5; // 2.5 items on desktop (peek effect - 3rd item half-visible, larger text)
     }
     
     // Buttons are always visible, just update their disabled state
     
     // Ensure current index is valid
-    const maxIndex = Math.max(0, this.totalItems - this.itemsPerView); // Maximum valid index
+    // For 2.5 items, we can scroll until the last item is fully visible
+    // So maxIndex = totalItems - 2 (since we show 2 full + 0.5 peek)
+    const visibleFullItems = Math.floor(this.itemsPerView); // 2 full items
+    const maxIndex = Math.max(0, this.totalItems - visibleFullItems); // Maximum valid index
     if (this.currentIndex > maxIndex) {
       this.currentIndex = maxIndex; // Clamp to max index
       this.scrollToIndex(this.currentIndex, false); // Scroll without animation
@@ -299,7 +302,9 @@ const newsCarousel = {
   
   scrollNext() {
     // Scroll to next single item
-    const maxIndex = Math.max(0, this.totalItems - this.itemsPerView); // Maximum index
+    // For 2.5 items view, max index allows last item to be fully visible
+    const visibleFullItems = Math.floor(this.itemsPerView); // 2 full items
+    const maxIndex = Math.max(0, this.totalItems - visibleFullItems); // Maximum index
     if (this.currentIndex < maxIndex) {
       this.currentIndex = Math.min(maxIndex, this.currentIndex + 1); // Increase index by 1
       this.scrollToIndex(this.currentIndex, true); // Scroll with animation
@@ -337,7 +342,9 @@ const newsCarousel = {
   
   updateButtons() {
     // Update button disabled states
-    const maxIndex = Math.max(0, this.totalItems - this.itemsPerView); // Maximum index
+    // For 2.5 items view, calculate max index based on visible full items
+    const visibleFullItems = Math.floor(this.itemsPerView); // 2 full items
+    const maxIndex = Math.max(0, this.totalItems - visibleFullItems); // Maximum index
     this.prevBtn.disabled = this.currentIndex <= 0; // Disable if at start
     this.nextBtn.disabled = this.currentIndex >= maxIndex; // Disable if at end
   }
