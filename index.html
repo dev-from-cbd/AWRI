@@ -377,7 +377,12 @@
         <div class="section-header"> <!-- Section header container -->
           <h2>Latest News</h2> <!-- Section heading text -->
         </div> <!-- End section-header -->
-        <div class="news-list"> <!-- Container for news items list -->
+        <div class="news-carousel-wrapper"> <!-- Carousel wrapper with navigation controls -->
+          <button class="news-nav-btn news-nav-prev" aria-label="Previous news" title="Previous"> <!-- Previous button -->
+            <i class="fa-solid fa-chevron-left"></i> <!-- Left chevron icon -->
+          </button> <!-- End previous button -->
+          <div class="news-carousel-container"> <!-- Scrollable container for news items -->
+            <div class="news-list"> <!-- Container for news items list -->
           <div class="news-item"> <!-- First news item container -->
             <a href="https://www.awri.com.au/information_services/ebulletin/agrochemical-updates/2025/12/03/agrochemical-update-avoiding-fungicide-resistance-in-botrytis-bunch-rot/"
               class="news-link"> <!-- News article link -->
@@ -433,7 +438,12 @@
             <a href="https://www.awri.com.au/information_services/ebulletin/2025/11/18/2025-awri-board-election-result/"
               class="news-more-link">more</a> <!-- Read more link -->
           </div> <!-- End news-item -->
-        </div> <!-- End news-list -->
+            </div> <!-- End news-list -->
+          </div> <!-- End news-carousel-container -->
+          <button class="news-nav-btn news-nav-next" aria-label="Next news" title="Next"> <!-- Next button -->
+            <i class="fa-solid fa-chevron-right"></i> <!-- Right chevron icon -->
+          </button> <!-- End next button -->
+        </div> <!-- End news-carousel-wrapper -->
       </div> <!-- End latest-news -->
 
       <section id="page-hub" class="card route"> <!-- Hub page section with filters and charts -->

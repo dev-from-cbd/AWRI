@@ -220,3 +220,139 @@ updateAuthUI();
 filterCharts();
 filterKB();
 initRouting();
+
+// News carousel functionality
+const newsCarousel = {
+  container: null, // Carousel container element
+  list: null, // News list element
+  prevBtn: null, // Previous button
+  nextBtn: null, // Next button
+  itemsPerView: 4, // Number of items visible at once (desktop)
+  totalItems: 0, // Total number of news items
+  currentIndex: 0, // Current scroll position index
+  
+  init() {
+    // Initialize carousel elements
+    this.container = document.querySelector('.news-carousel-container'); // Get carousel container
+    this.list = document.querySelector('.news-list'); // Get news list
+    this.prevBtn = document.querySelector('.news-nav-prev'); // Get previous button
+    this.nextBtn = document.querySelector('.news-nav-next'); // Get next button
+    
+    // Check if carousel elements exist
+    if (!this.container || !this.list || !this.prevBtn || !this.nextBtn) return;
+    
+    // Get all news items
+    const items = this.list.querySelectorAll('.news-item'); // Select all news items
+    this.totalItems = items.length; // Store total count
+    
+    // Calculate items per view based on screen size
+    this.updateItemsPerView(); // Update responsive items per view
+    
+    // If items fit on screen, hide navigation buttons
+    if (this.totalItems <= this.itemsPerView) {
+      this.prevBtn.style.display = 'none'; // Hide previous button
+      this.nextBtn.style.display = 'none'; // Hide next button
+      return;
+    }
+    
+    // Add event listeners
+    this.prevBtn.addEventListener('click', () => this.scrollPrev()); // Previous button click
+    this.nextBtn.addEventListener('click', () => this.scrollNext()); // Next button click
+    
+    // Update on window resize
+    let resizeTimer; // Debounce timer
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimer); // Clear previous timer
+      resizeTimer = setTimeout(() => {
+        this.updateItemsPerView(); // Update items per view
+        this.updateButtons(); // Update button states
+      }, 250); // Wait 250ms after resize
+    });
+    
+    // Initialize button states
+    this.updateButtons(); // Set initial button states
+  },
+  
+  updateItemsPerView() {
+    // Update items per view based on window width
+    const width = window.innerWidth; // Get window width
+    if (width < 900) {
+      this.itemsPerView = 1; // 1 item on mobile
+    } else {
+      this.itemsPerView = 4; // 4 items on desktop
+    }
+    
+    // Re-check if buttons should be visible
+    if (this.totalItems <= this.itemsPerView) {
+      if (this.prevBtn) this.prevBtn.style.display = 'none'; // Hide previous button
+      if (this.nextBtn) this.nextBtn.style.display = 'none'; // Hide next button
+    } else {
+      if (this.prevBtn) this.prevBtn.style.display = 'flex'; // Show previous button
+      if (this.nextBtn) this.nextBtn.style.display = 'flex'; // Show next button
+    }
+    
+    // Ensure current index is valid
+    const maxIndex = Math.max(0, this.totalItems - this.itemsPerView); // Maximum valid index
+    if (this.currentIndex > maxIndex) {
+      this.currentIndex = maxIndex; // Clamp to max index
+      this.scrollToIndex(this.currentIndex, false); // Scroll without animation
+    }
+  },
+  
+  scrollPrev() {
+    // Scroll to previous set of items
+    if (this.currentIndex > 0) {
+      this.currentIndex = Math.max(0, this.currentIndex - this.itemsPerView); // Decrease index
+      this.scrollToIndex(this.currentIndex, true); // Scroll with animation
+    }
+  },
+  
+  scrollNext() {
+    // Scroll to next set of items
+    const maxIndex = Math.max(0, this.totalItems - this.itemsPerView); // Maximum index
+    if (this.currentIndex < maxIndex) {
+      this.currentIndex = Math.min(maxIndex, this.currentIndex + this.itemsPerView); // Increase index
+      this.scrollToIndex(this.currentIndex, true); // Scroll with animation
+    }
+  },
+  
+  scrollToIndex(index, animate = true) {
+    // Scroll carousel to specific index using transform
+    if (!this.list || !this.container) return; // Safety check
+    
+    // Calculate scroll position
+    const gap = parseInt(window.getComputedStyle(this.list).gap) || 18; // Get gap value
+    const containerWidth = this.container.offsetWidth; // Container width
+    const itemWidth = containerWidth / this.itemsPerView; // Item width
+    const scrollAmount = index * (itemWidth + gap); // Total scroll amount
+    
+    // Apply transform
+    if (animate) {
+      this.list.style.transition = 'transform 0.4s ease'; // Smooth transition
+    } else {
+      this.list.style.transition = 'none'; // No transition
+    }
+    this.list.style.transform = `translateX(-${scrollAmount}px)`; // Apply transform
+    
+    // Update button states after transition
+    if (animate) {
+      setTimeout(() => this.updateButtons(), 400); // Update after animation
+    } else {
+      this.updateButtons(); // Update immediately
+    }
+  },
+  
+  updateButtons() {
+    // Update button disabled states
+    const maxIndex = Math.max(0, this.totalItems - this.itemsPerView); // Maximum index
+    this.prevBtn.disabled = this.currentIndex <= 0; // Disable if at start
+    this.nextBtn.disabled = this.currentIndex >= maxIndex; // Disable if at end
+  }
+};
+
+// Initialize news carousel when DOM is ready
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', () => newsCarousel.init()); // Wait for DOM
+} else {
+  newsCarousel.init(); // Initialize immediately if DOM already loaded
+}
