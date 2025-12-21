@@ -248,12 +248,9 @@ const newsCarousel = {
     // Calculate items per view based on screen size
     this.updateItemsPerView(); // Update responsive items per view
     
-    // If items fit on screen, hide navigation buttons
-    if (this.totalItems <= this.itemsPerView) {
-      this.prevBtn.style.display = 'none'; // Hide previous button
-      this.nextBtn.style.display = 'none'; // Hide next button
-      return;
-    }
+    // Always show buttons (they will be disabled if not needed)
+    this.prevBtn.style.display = 'flex'; // Show previous button
+    this.nextBtn.style.display = 'flex'; // Show next button
     
     // Add event listeners
     this.prevBtn.addEventListener('click', () => this.scrollPrev()); // Previous button click
@@ -282,14 +279,7 @@ const newsCarousel = {
       this.itemsPerView = 4; // 4 items on desktop
     }
     
-    // Re-check if buttons should be visible
-    if (this.totalItems <= this.itemsPerView) {
-      if (this.prevBtn) this.prevBtn.style.display = 'none'; // Hide previous button
-      if (this.nextBtn) this.nextBtn.style.display = 'none'; // Hide next button
-    } else {
-      if (this.prevBtn) this.prevBtn.style.display = 'flex'; // Show previous button
-      if (this.nextBtn) this.nextBtn.style.display = 'flex'; // Show next button
-    }
+    // Buttons are always visible, just update their disabled state
     
     // Ensure current index is valid
     const maxIndex = Math.max(0, this.totalItems - this.itemsPerView); // Maximum valid index
@@ -300,18 +290,18 @@ const newsCarousel = {
   },
   
   scrollPrev() {
-    // Scroll to previous set of items
+    // Scroll to previous single item
     if (this.currentIndex > 0) {
-      this.currentIndex = Math.max(0, this.currentIndex - this.itemsPerView); // Decrease index
+      this.currentIndex = Math.max(0, this.currentIndex - 1); // Decrease index by 1
       this.scrollToIndex(this.currentIndex, true); // Scroll with animation
     }
   },
   
   scrollNext() {
-    // Scroll to next set of items
+    // Scroll to next single item
     const maxIndex = Math.max(0, this.totalItems - this.itemsPerView); // Maximum index
     if (this.currentIndex < maxIndex) {
-      this.currentIndex = Math.min(maxIndex, this.currentIndex + this.itemsPerView); // Increase index
+      this.currentIndex = Math.min(maxIndex, this.currentIndex + 1); // Increase index by 1
       this.scrollToIndex(this.currentIndex, true); // Scroll with animation
     }
   },
@@ -320,11 +310,14 @@ const newsCarousel = {
     // Scroll carousel to specific index using transform
     if (!this.list || !this.container) return; // Safety check
     
-    // Calculate scroll position
+    // Get first news item to calculate its actual width
+    const firstItem = this.list.querySelector('.news-item'); // Get first news item
+    if (!firstItem) return; // Safety check
+    
+    // Calculate scroll position using actual item width
     const gap = parseInt(window.getComputedStyle(this.list).gap) || 18; // Get gap value
-    const containerWidth = this.container.offsetWidth; // Container width
-    const itemWidth = containerWidth / this.itemsPerView; // Item width
-    const scrollAmount = index * (itemWidth + gap); // Total scroll amount
+    const itemWidth = firstItem.offsetWidth; // Actual item width from DOM
+    const scrollAmount = index * (itemWidth + gap); // Total scroll amount (1 item per step)
     
     // Apply transform
     if (animate) {

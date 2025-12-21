@@ -772,7 +772,7 @@ a.home-tile:hover, a.home-tile:focus { text-decoration: none }
   border-radius: 50%; /* Circular button */
   width: 44px; /* Button width */
   height: 44px; /* Button height */
-  display: flex; /* Flex for icon centering */
+  display: flex !important; /* Force flex display for icon centering */
   align-items: center; /* Center icon vertically */
   justify-content: center; /* Center icon horizontally */
   cursor: pointer; /* Pointer cursor */
@@ -781,6 +781,8 @@ a.home-tile:hover, a.home-tile:focus { text-decoration: none }
   transition: all 0.2s ease; /* Smooth transitions */
   flex-shrink: 0; /* Don't shrink buttons */
   z-index: 10; /* Above other content */
+  position: relative; /* Position relative for z-index */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Add shadow for visibility */
 }
 
 .news-nav-btn:hover {
@@ -798,6 +800,21 @@ a.home-tile:hover, a.home-tile:focus { text-decoration: none }
   opacity: 0.3; /* Disabled opacity */
   cursor: not-allowed; /* Disabled cursor */
   pointer-events: none; /* Disable interactions */
+}
+
+/* Fallback if Font Awesome icons don't load */
+.news-nav-btn i:not([class*="fa-"]) {
+  display: none; /* Hide if not Font Awesome */
+}
+
+.news-nav-btn:not(:has(i.fa-solid))::before {
+  content: "‹"; /* Show text arrow if no icon */
+  font-size: 24px; /* Larger text arrow */
+  font-weight: bold; /* Bold text */
+}
+
+.news-nav-btn.news-nav-next:not(:has(i.fa-solid))::before {
+  content: "›"; /* Right arrow for next button */
 }
 
 .news-link {
