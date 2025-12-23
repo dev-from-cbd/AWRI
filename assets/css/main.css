@@ -767,20 +767,22 @@ a.home-tile:hover, a.home-tile:focus { text-decoration: none }
   will-change: transform; /* Optimize for animation */
 }
 
+/* Responsive flex for news items - show 2.5 items for peek effect and larger text */
 .news-item {
-  flex: 0 0 calc(100% - 0px); /* Full width on mobile, no shrink */
-  min-width: 0; /* Allow shrinking */
-  background: transparent; /* Transparent background */
-  border-radius: 10px; /* Rounded corners */
-  padding: 18px; /* Padding on mobile */
-  border: 1px solid rgba(255,255,255,0.03); /* Subtle border */
-  transition: background .12s ease, transform .12s ease; /* Smooth transitions */
-  /* No overflow: hidden to allow text wrapping around image */
+  flex: 0 0 calc(100% - 0px);
+  min-width: 0;
+  background: transparent;
+  border-radius: 10px;
+  padding: 18px;
+  border: 1px solid rgba(255,255,255,0.03);
+  transition: background .12s ease, transform .12s ease;
+  display: block; /* Restore block display for floats */
+  overflow: hidden; /* Clear floats */
 }
 
 @media (min-width: 900px) {
   .news-item {
-    padding: 24px; /* Larger padding on desktop for bigger items */
+    padding: 24px; /* Larger padding on desktop */
   }
 }
 
@@ -840,99 +842,88 @@ a.home-tile:hover, a.home-tile:focus { text-decoration: none }
   content: "›"; /* Right arrow for next button */
 }
 
+/* Link container */
 .news-link {
-  display: block; /* Block link */
-  text-decoration: none; /* No underline */
-  color: var(--text); /* Text color */
-  margin-bottom: 10px; /* Bottom margin */
-  /* No overflow: hidden to allow text to wrap around image below */
+  display: block; /* Block to contain title and floated image */
+  color: var(--text);
+  text-decoration: none;
 }
 
-/* News image styles - 100x100px with text wrapping */
+/* Image wrapper - Floated Left */
 .news-image-wrapper {
-  width: 100px; /* Fixed width 100px */
-  height: 100px; /* Fixed height 100px */
-  float: left; /* Float left for text wrapping on all sides */
-  margin-right: 14px; /* Right margin for spacing */
-  margin-bottom: 0; /* No bottom margin - text wraps naturally below */
-  overflow: hidden; /* Hide overflow of image */
-  border-radius: 8px; /* Rounded corners */
-  background: var(--surface); /* Background color */
-  position: relative; /* Position relative */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
-  border: 1px solid rgba(255, 255, 255, 0.05); /* Subtle border */
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15); /* Subtle shadow */
-  flex-shrink: 0; /* Don't shrink */
-  shape-outside: margin-box; /* Allow text to wrap around the shape */
+  float: left; /* Wrap text around */
+  margin-right: 15px; /* 15px right margin */
+  margin-bottom: 15px; /* 15px bottom margin */
+  margin-top: 5px; /* lower image slightly */
+  border-radius: 8px;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 150px;
+  shape-outside: margin-box; /* wrap with uniform offset around the box */
+  shape-margin: 15px; /* equal 15px gap on all sides */
 }
 
-.news-link:hover .news-image-wrapper {
-  transform: translateY(-2px); /* Slight lift on hover */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25); /* Enhanced shadow on hover */
-  border-color: rgba(255, 255, 255, 0.1); /* Brighter border on hover */
-}
-
+/* Actual image styles — keep original aspect ratio, no cropping */
 .news-image {
-  width: 100%; /* Full width of container */
-  height: 100%; /* Full height of container */
-  object-fit: cover; /* Cover container maintaining aspect ratio */
-  display: block; /* Block display */
-  transition: transform 0.3s ease; /* Smooth zoom transition */
+  display: block;
+  width: 150px;       /* Consistent thumbnail width */
+  height: auto;       /* Preserve original aspect ratio */
+  border-radius: 8px; /* Match wrapper rounding */
 }
 
-.news-link:hover .news-image {
-  transform: scale(1.05); /* Slight zoom on hover */
-}
-
+/* Content elements */
 .news-title {
-  color: var(--text); /* Text color */
-  font-weight: 800; /* Bold weight */
-  font-size: 18px; /* Font size on mobile */
-  margin: 0; /* Remove default margin */
-  /* Text naturally wraps around floated image */
+  color: var(--text);
+  font-weight: 800;
+  font-size: 18px;
+  margin: -8px 0 6px 0; /* lift first line a bit more */
+  text-wrap: balance;
+  /* Title flows next to floated image */
 }
 
 @media (min-width: 900px) {
   .news-title {
-    font-size: 24px; /* Larger font size on desktop for better readability */
-    line-height: 1.3; /* Better line height */
+    font-size: 24px; /* Larger font size on desktop */
+    line-height: 1.3;
   }
 }
 
 .news-meta {
-  color: var(--muted); /* Muted color */
-  font-size: 13px; /* Font size on mobile */
-  margin-top: 6px; /* Top margin */
+  color: var(--muted);
+  font-size: 13px;
+  margin-top: 0; 
+  /* Flows next to image if space permits */
 }
 
 @media (min-width: 900px) {
   .news-meta {
     font-size: 15px; /* Larger font size on desktop */
-    margin-top: 8px; /* More spacing */
+    margin-top: 2px; /* Slight adjustment */
   }
 }
 
 .news-excerpt {
-  color: var(--muted); /* Muted color */
-  margin-top: 10px; /* Top margin */
-  font-size: 15px; /* Font size on mobile */
-  line-height: 1.45; /* Line height */
+  color: var(--muted);
+  margin-top: 8px;
+  font-size: 15px;
+  line-height: 1.45;
+  /* Flows next to image, wraps under if long enough */
 }
 
 @media (min-width: 900px) {
   .news-excerpt {
-    font-size: 17px; /* Larger font size on desktop for better readability */
-    line-height: 1.5; /* Better line height */
-    margin-top: 12px; /* More spacing */
+    font-size: 17px; /* Larger font size on desktop */
+    line-height: 1.5;
+    margin-top: 10px;
   }
 }
 
 .news-more-link {
-  color: var(--accent-4); /* Accent color */
-  font-weight: 800; /* Bold weight */
-  display: inline-block; /* Inline block */
-  margin-top: 10px; /* Top margin */
-  font-size: 14px; /* Font size on mobile */
+  color: var(--accent-4);
+  font-weight: 800;
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 14px;
 }
 
 @media (min-width: 900px) {

@@ -356,3 +356,18 @@ if (document.readyState === 'loading') {
 } else {
   newsCarousel.init(); // Initialize immediately if DOM already loaded
 }
+
+// Prevent single-word widows in news titles by binding the last two words
+function preventTitleWidows() {
+  const titles = document.querySelectorAll('.news-title');
+  titles.forEach(el => {
+    const text = (el.textContent || '').trim();
+    // Replace the last space with a non-breaking space
+    el.textContent = text.replace(/\s+([^\s]+)$/, '\u00A0$1');
+  });
+}
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', preventTitleWidows);
+} else {
+  preventTitleWidows();
+}
