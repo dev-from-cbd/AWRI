@@ -299,10 +299,10 @@ body {
 }
 
 .home-strip {
-  background: transparent; /* show page background instead of white band */
-  color: var(--text);
-  border-top: 1px solid rgba(255,255,255,0.04);
-  border-bottom: 1px solid rgba(255,255,255,0.04);
+  background: #ffffff;
+  color: #24314a;
+  border-top: 1px solid #d5dbe3;
+  border-bottom: 1px solid #d5dbe3;
 }
 
 .home-strip-inner {
@@ -391,7 +391,7 @@ a.home-tile:hover, a.home-tile:focus { text-decoration: none }
   font-size: 12px;
   font-weight: 600;
   text-align: center;
-  color: var(--text);
+  color: #24314a;
 }
 
 .home-tile:hover .home-icon-circle {
@@ -511,8 +511,20 @@ a.home-tile:hover, a.home-tile:focus { text-decoration: none }
   grid-template-columns: 1fr;
   gap: 0;
   max-width: 1200px;
-  margin: 24px auto;
-  padding: 0 24px
+  margin: 0 auto;
+  padding: 0 24px;
+  position: relative;
+}
+.layout::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  background: #ffffff;
+  z-index: -1;
 }
 
 /* sidebar styles removed for single-column layout */
@@ -697,21 +709,22 @@ a.home-tile:hover, a.home-tile:focus { text-decoration: none }
 }
 
 .footer {
-  border-top: 1px solid var(--border);
-  margin-top: 24px;
-  background: #0a0e11
+  border-top: 1px solid #d5dbe3;
+  margin-top: 0;
+  background: #ffffff
 }
 
 .footer-content {
   max-width: 1200px;
   margin: 0 auto;
   padding: 18px 24px;
-  color: var(--muted);
+  color: #24314a;
   font-size: 13px
 }
 
 .route {
-  display: none
+  display: none;
+  background: #ffffff; /* white sides/background below breadcrumbs */
 }
 
 .route.active {
@@ -730,6 +743,17 @@ a.home-tile:hover, a.home-tile:focus { text-decoration: none }
 .latest-news .section-header { text-align: center; padding-bottom: 14px; margin-bottom: 18px; border-bottom: 1px solid rgba(255,255,255,0.06); }
 .latest-news .section-header h2 { font-size: 30px; font-weight: 800; margin: 0 auto 8px; color: var(--text); }
 
+/* White preview theme — sections below breadcrumbs */
+.layout .card,
+.layout .latest-news {
+  background: #ffffff;
+  border-color: #d5dbe3;
+  color: #24314a;
+}
+.layout .latest-news .section-header h2 { color: #24314a; }
+.layout .latest-news a { color: #24314a; }
+.layout .latest-news a:hover { color: #24314a; text-decoration: underline; }
+
 /* News carousel wrapper and navigation */
 .news-carousel-wrapper {
   position: relative; /* Position relative for absolute positioned buttons */
@@ -745,20 +769,7 @@ a.home-tile:hover, a.home-tile:focus { text-decoration: none }
   padding-right: 0; /* No padding on mobile */
 }
 
-/* Gradient fade effect on the right edge to enhance peek effect */
-@media (min-width: 900px) {
-  .news-carousel-container::after {
-    content: ''; /* Pseudo-element for gradient */
-    position: absolute; /* Absolute positioning */
-    top: 0; /* Top edge */
-    right: 0; /* Right edge */
-    bottom: 0; /* Bottom edge */
-    width: 120px; /* Gradient width */
-    background: linear-gradient(to left, var(--surface-2), transparent); /* Fade gradient */
-    pointer-events: none; /* Don't block clicks */
-    z-index: 5; /* Above news items but below buttons */
-  }
-}
+
 
 .news-list {
   display: flex; /* Flex layout for horizontal scrolling */
