@@ -196,7 +196,11 @@ body {
   transform: translateY(-6px);
   transition: opacity .18s ease, transform .18s ease
 }
-.mega.show .mega-panel{ opacity:1; transform:translateY(0) }
+
+.mega.show .mega-panel {
+  opacity: 1;
+  transform: translateY(0)
+}
 
 .mega-col {
   display: flex;
@@ -204,11 +208,26 @@ body {
   gap: 6px
 }
 
-.mega-bottom { grid-column: 1 / -1; display: contents }
-.mega-bottom .mega-item.bottom { margin-top: 10px }
-.mega-bottom .mega-item.bottom:nth-child(1) { grid-column: 1 }
-.mega-bottom .mega-item.bottom:nth-child(2) { grid-column: 2 }
-.mega-bottom .mega-item.bottom:nth-child(3) { grid-column: 3 }
+.mega-bottom {
+  grid-column: 1 / -1;
+  display: contents
+}
+
+.mega-bottom .mega-item.bottom {
+  margin-top: 10px
+}
+
+.mega-bottom .mega-item.bottom:nth-child(1) {
+  grid-column: 1
+}
+
+.mega-bottom .mega-item.bottom:nth-child(2) {
+  grid-column: 2
+}
+
+.mega-bottom .mega-item.bottom:nth-child(3) {
+  grid-column: 3
+}
 
 .mega-title {
   font-weight: 700;
@@ -220,7 +239,11 @@ body {
   color: inherit;
   display: block
 }
-.mega-title:link, .mega-title:visited { color: inherit }
+
+.mega-title:link,
+.mega-title:visited {
+  color: inherit
+}
 
 .mega-item {
   color: #fff;
@@ -231,12 +254,29 @@ body {
   font-size: 14px
 }
 
-.mega-panel a { text-transform: uppercase }
-.mega-panel a:hover { text-decoration: underline }
+.mega-panel a {
+  text-transform: uppercase
+}
 
-.mega-item.icon-right { display: flex; align-items: baseline; gap: 4px }
-.mega-item.icon-right i { color: #fff; opacity: .9; transition: transform .15s ease }
-.mega-item.icon-right:hover i { transform: translateX(1px) }
+.mega-panel a:hover {
+  text-decoration: underline
+}
+
+.mega-item.icon-right {
+  display: flex;
+  align-items: baseline;
+  gap: 4px
+}
+
+.mega-item.icon-right i {
+  color: #fff;
+  opacity: .9;
+  transition: transform .15s ease
+}
+
+.mega-item.icon-right:hover i {
+  transform: translateX(1px)
+}
 
 .mega-item.bottom {
   font-weight: 700
@@ -255,7 +295,9 @@ body {
   border-top: 12px solid #32486f
 }
 
-#mega-services .mega-panel{ grid-template-columns: repeat(5, minmax(220px, 1fr)) }
+#mega-services .mega-panel {
+  grid-template-columns: repeat(5, minmax(220px, 1fr))
+}
 
 .hero {
   position: relative;
@@ -290,10 +332,12 @@ body {
   letter-spacing: .08em;
   text-transform: uppercase;
 }
+
 .breadcrumb-inner a {
   color: inherit;
   text-decoration: none;
 }
+
 .breadcrumb-inner a:hover {
   text-decoration: underline;
 }
@@ -324,8 +368,15 @@ body {
   gap: 10px;
   text-decoration: none;
 }
-a.home-tile { text-decoration: none }
-a.home-tile:hover, a.home-tile:focus { text-decoration: none }
+
+a.home-tile {
+  text-decoration: none
+}
+
+a.home-tile:hover,
+a.home-tile:focus {
+  text-decoration: none
+}
 
 .home-icon-circle {
   width: 108px;
@@ -334,7 +385,7 @@ a.home-tile:hover, a.home-tile:focus { text-decoration: none }
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 6px 16px rgba(0,0,0,.12);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, .12);
   transition: transform .2s ease, box-shadow .2s ease;
   position: relative;
   overflow: hidden;
@@ -349,7 +400,7 @@ a.home-tile:hover, a.home-tile:focus { text-decoration: none }
 .home-icon-circle svg {
   width: 48px;
   height: 48px;
-  filter: drop-shadow(0 1px 1px rgba(0,0,0,.2));
+  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, .2));
 }
 
 .home-icon-circle svg.icon-grapes {
@@ -382,7 +433,7 @@ a.home-tile:hover, a.home-tile:focus { text-decoration: none }
   height: 84px;
 }
 
-.home-icon-circle > * {
+.home-icon-circle>* {
   position: relative;
   z-index: 1;
 }
@@ -396,10 +447,10 @@ a.home-tile:hover, a.home-tile:focus { text-decoration: none }
 
 .home-tile:hover .home-icon-circle {
   transform: translateY(-3px);
-  box-shadow: 0 12px 22px rgba(0,0,0,.18);
+  box-shadow: 0 12px 22px rgba(0, 0, 0, .18);
 }
 
-.home-tile:hover .home-icon-circle > * {
+.home-tile:hover .home-icon-circle>* {
   transform: scale(1.06);
 }
 
@@ -412,13 +463,15 @@ a.home-tile:hover, a.home-tile:focus { text-decoration: none }
   position: absolute;
   inset: 0;
   border-radius: 50%;
-  background: linear-gradient(115deg, rgba(255,255,255,.22), rgba(255,255,255,0) 55%);
+  background: linear-gradient(115deg, rgba(255, 255, 255, .22), rgba(255, 255, 255, 0) 55%);
   transform: translateX(-120%);
   pointer-events: none;
 }
 
 @keyframes shine {
-  to { transform: translateX(140%); }
+  to {
+    transform: translateX(140%);
+  }
 }
 
 .home-tile:hover .home-icon-circle::after {
@@ -431,26 +484,31 @@ a.home-tile:hover, a.home-tile:focus { text-decoration: none }
   inset: 8px;
   border-radius: 50%;
   box-shadow:
-    inset 0 0 0 2px rgba(255,255,255,.35),
-    inset 0 14px 28px rgba(255,255,255,.12);
+    inset 0 0 0 2px rgba(255, 255, 255, .35),
+    inset 0 14px 28px rgba(255, 255, 255, .12);
   z-index: 0;
 }
 
 .home-icon--viticulture {
   background: radial-gradient(100% 100% at 30% 20%, #b7cbea 0%, #8fb0de 60%, #7ea3d7 100%);
 }
+
 .home-icon--winemaking {
   background: radial-gradient(100% 100% at 30% 20%, #b66161 0%, #a64545 60%, #8b2f2f 100%);
 }
+
 .home-icon--smoke {
   background: radial-gradient(100% 100% at 30% 20%, #e49763 0%, #d8782f 60%, #c76525 100%);
 }
+
 .home-icon--sustainable {
   background: radial-gradient(100% 100% at 30% 20%, #6b8551 0%, #556c3b 60%, #445630 100%);
 }
+
 .home-icon--projects {
   background: radial-gradient(100% 100% at 30% 20%, #f0ce76 0%, #e0b54a 60%, #d3a441 100%);
 }
+
 .home-icon--innovate {
   background: radial-gradient(100% 100% at 30% 20%, #d49580 0%, #c57a63 60%, #b66754 100%);
 }
@@ -515,6 +573,7 @@ a.home-tile:hover, a.home-tile:focus { text-decoration: none }
   padding: 0 24px;
   position: relative;
 }
+
 .layout::before {
   content: "";
   position: absolute;
@@ -724,7 +783,8 @@ a.home-tile:hover, a.home-tile:focus { text-decoration: none }
 
 .route {
   display: none;
-  background: #ffffff; /* white sides/background below breadcrumbs */
+  background: #ffffff;
+  /* white sides/background below breadcrumbs */
 }
 
 .route.active {
@@ -738,10 +798,22 @@ a.home-tile:hover, a.home-tile:focus { text-decoration: none }
   padding: 22px;
   background: var(--surface-2);
   border-radius: 12px;
-  border: 1px solid rgba(255,255,255,0.04);
+  border: 1px solid rgba(255, 255, 255, 0.04);
 }
-.latest-news .section-header { text-align: center; padding-bottom: 14px; margin-bottom: 18px; border-bottom: 1px solid rgba(255,255,255,0.06); }
-.latest-news .section-header h2 { font-size: 30px; font-weight: 800; margin: 0 auto 8px; color: var(--text); }
+
+.latest-news .section-header {
+  text-align: center;
+  padding-bottom: 14px;
+  margin-bottom: 18px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.latest-news .section-header h2 {
+  font-size: 30px;
+  font-weight: 800;
+  margin: 0 auto 8px;
+  color: var(--text);
+}
 
 /* White preview theme — sections below breadcrumbs */
 .layout .card,
@@ -750,35 +822,66 @@ a.home-tile:hover, a.home-tile:focus { text-decoration: none }
   border-color: #d5dbe3;
   color: #24314a;
 }
-.layout .latest-news .section-header h2 { color: #24314a; }
-.layout .latest-news a { color: #24314a; }
-.layout .latest-news a:hover { color: #24314a; text-decoration: underline; }
-.layout .latest-news .news-title { color: #24314a; }
-.layout .latest-news .news-meta { color: #3b4c6a; }
-.layout .latest-news .news-excerpt { color: #24314a; }
+
+.layout .latest-news .section-header h2 {
+  color: #24314a;
+}
+
+.layout .latest-news a {
+  color: #24314a;
+}
+
+.layout .latest-news a:hover {
+  color: #24314a;
+  text-decoration: underline;
+}
+
+.layout .latest-news .news-title {
+  color: #24314a;
+}
+
+.layout .latest-news .news-meta {
+  color: #3b4c6a;
+}
+
+.layout .latest-news .news-excerpt {
+  color: #24314a;
+}
 
 /* News carousel wrapper and navigation */
 .news-carousel-wrapper {
-  position: relative; /* Position relative for absolute positioned buttons */
-  display: flex; /* Flex layout for buttons and container */
-  align-items: center; /* Center align items vertically */
-  gap: 12px; /* Gap between buttons and container */
+  position: relative;
+  /* Position relative for absolute positioned buttons */
+  display: flex;
+  /* Flex layout for buttons and container */
+  align-items: center;
+  /* Center align items vertically */
+  gap: 12px;
+  /* Gap between buttons and container */
 }
 
 .news-carousel-container {
-  flex: 1; /* Take remaining space */
-  overflow: hidden; /* Hide overflow for scrolling effect */
-  position: relative; /* Position relative for scroll container */
-  padding-right: 0; /* No padding on mobile */
+  flex: 1;
+  /* Take remaining space */
+  overflow: hidden;
+  /* Hide overflow for scrolling effect */
+  position: relative;
+  /* Position relative for scroll container */
+  padding-right: 0;
+  /* No padding on mobile */
 }
 
 
 
 .news-list {
-  display: flex; /* Flex layout for horizontal scrolling */
-  gap: 18px; /* Gap between news items */
-  transition: transform 0.4s ease; /* Smooth scroll transition */
-  will-change: transform; /* Optimize for animation */
+  display: flex;
+  /* Flex layout for horizontal scrolling */
+  gap: 18px;
+  /* Gap between news items */
+  transition: transform 0.4s ease;
+  /* Smooth scroll transition */
+  will-change: transform;
+  /* Optimize for animation */
 }
 
 /* Responsive flex for news items - show 2.5 items for peek effect and larger text */
@@ -788,101 +891,145 @@ a.home-tile:hover, a.home-tile:focus { text-decoration: none }
   background: transparent;
   border-radius: 10px;
   padding: 18px;
-  border: 1px solid rgba(255,255,255,0.03);
+  border: 1px solid rgba(255, 255, 255, 0.03);
   transition: background .12s ease, transform .12s ease;
-  display: block; /* Restore block display for floats */
-  overflow: hidden; /* Clear floats */
+  display: block;
+  /* Restore block display for floats */
+  overflow: hidden;
+  /* Clear floats */
 }
 
 @media (min-width: 900px) {
   .news-item {
-    padding: 24px; /* Larger padding on desktop */
+    padding: 24px;
+    /* Larger padding on desktop */
   }
 }
 
 .news-item:hover {
-  background: rgba(255,255,255,0.02); /* Hover background */
-  transform: translateY(-3px); /* Lift on hover */
+  background: rgba(255, 255, 255, 0.02);
+  /* Hover background */
+  transform: translateY(-3px);
+  /* Lift on hover */
 }
 
 .news-nav-btn {
-  background: var(--surface); /* Button background */
-  border: 1px solid var(--border); /* Button border */
-  border-radius: 50%; /* Circular button */
-  width: 44px; /* Button width */
-  height: 44px; /* Button height */
-  display: flex !important; /* Force flex display for icon centering */
-  align-items: center; /* Center icon vertically */
-  justify-content: center; /* Center icon horizontally */
-  cursor: pointer; /* Pointer cursor */
-  color: var(--text); /* Text color */
-  font-size: 18px; /* Icon size */
-  transition: all 0.2s ease; /* Smooth transitions */
-  flex-shrink: 0; /* Don't shrink buttons */
-  z-index: 10; /* Above other content */
-  position: relative; /* Position relative for z-index */
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Add shadow for visibility */
+  background: var(--surface);
+  /* Button background */
+  border: 1px solid var(--border);
+  /* Button border */
+  border-radius: 50%;
+  /* Circular button */
+  width: 44px;
+  /* Button width */
+  height: 44px;
+  /* Button height */
+  display: flex !important;
+  /* Force flex display for icon centering */
+  align-items: center;
+  /* Center icon vertically */
+  justify-content: center;
+  /* Center icon horizontally */
+  cursor: pointer;
+  /* Pointer cursor */
+  color: var(--text);
+  /* Text color */
+  font-size: 18px;
+  /* Icon size */
+  transition: all 0.2s ease;
+  /* Smooth transitions */
+  flex-shrink: 0;
+  /* Don't shrink buttons */
+  z-index: 10;
+  /* Above other content */
+  position: relative;
+  /* Position relative for z-index */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  /* Add shadow for visibility */
 }
 
 .news-nav-btn:hover {
-  background: var(--surface-2); /* Hover background */
-  border-color: var(--primary); /* Hover border color */
-  color: var(--primary); /* Hover icon color */
-  transform: scale(1.1); /* Slight scale on hover */
+  background: var(--surface-2);
+  /* Hover background */
+  border-color: var(--primary);
+  /* Hover border color */
+  color: var(--primary);
+  /* Hover icon color */
+  transform: scale(1.1);
+  /* Slight scale on hover */
 }
 
 .news-nav-btn:active {
-  transform: scale(0.95); /* Pressed state */
+  transform: scale(0.95);
+  /* Pressed state */
 }
 
 .news-nav-btn:disabled {
-  opacity: 0.3; /* Disabled opacity */
-  cursor: not-allowed; /* Disabled cursor */
-  pointer-events: none; /* Disable interactions */
+  opacity: 0.3;
+  /* Disabled opacity */
+  cursor: not-allowed;
+  /* Disabled cursor */
+  pointer-events: none;
+  /* Disable interactions */
 }
 
 /* Fallback if Font Awesome icons don't load */
 .news-nav-btn i:not([class*="fa-"]) {
-  display: none; /* Hide if not Font Awesome */
+  display: none;
+  /* Hide if not Font Awesome */
 }
 
 .news-nav-btn:not(:has(i.fa-solid))::before {
-  content: "‹"; /* Show text arrow if no icon */
-  font-size: 24px; /* Larger text arrow */
-  font-weight: bold; /* Bold text */
+  content: "‹";
+  /* Show text arrow if no icon */
+  font-size: 24px;
+  /* Larger text arrow */
+  font-weight: bold;
+  /* Bold text */
 }
 
 .news-nav-btn.news-nav-next:not(:has(i.fa-solid))::before {
-  content: "›"; /* Right arrow for next button */
+  content: "›";
+  /* Right arrow for next button */
 }
 
 /* Link container */
 .news-link {
-  display: block; /* Block to contain title and floated image */
+  display: block;
+  /* Block to contain title and floated image */
   color: var(--text);
   text-decoration: none;
 }
 
 /* Image wrapper - Floated Left */
 .news-image-wrapper {
-  float: left; /* Wrap text around */
-  margin-right: 15px; /* 15px right margin */
-  margin-bottom: 15px; /* 15px bottom margin */
-  margin-top: 5px; /* lower image slightly */
+  float: left;
+  /* Wrap text around */
+  margin-right: 15px;
+  /* 15px right margin */
+  margin-bottom: 15px;
+  /* 15px bottom margin */
+  margin-top: 5px;
+  /* lower image slightly */
   border-radius: 8px;
   position: relative;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   width: 150px;
-  shape-outside: margin-box; /* wrap with uniform offset around the box */
-  shape-margin: 15px; /* equal 15px gap on all sides */
+  shape-outside: margin-box;
+  /* wrap with uniform offset around the box */
+  shape-margin: 15px;
+  /* equal 15px gap on all sides */
 }
 
 /* Actual image styles — keep original aspect ratio, no cropping */
 .news-image {
   display: block;
-  width: 150px;       /* Consistent thumbnail width */
-  height: auto;       /* Preserve original aspect ratio */
-  border-radius: 8px; /* Match wrapper rounding */
+  width: 150px;
+  /* Consistent thumbnail width */
+  height: auto;
+  /* Preserve original aspect ratio */
+  border-radius: 8px;
+  /* Match wrapper rounding */
 }
 
 /* Content elements */
@@ -890,14 +1037,16 @@ a.home-tile:hover, a.home-tile:focus { text-decoration: none }
   color: var(--text);
   font-weight: 800;
   font-size: 16px;
-  margin: -8px 0 6px 0; /* lift first line a bit more */
+  margin: -8px 0 6px 0;
+  /* lift first line a bit more */
   text-wrap: balance;
   /* Title flows next to floated image */
 }
 
 @media (min-width: 900px) {
   .news-title {
-    font-size: 20px; /* Smaller font size on desktop */
+    font-size: 20px;
+    /* Smaller font size on desktop */
     line-height: 1.3;
   }
 }
@@ -905,14 +1054,16 @@ a.home-tile:hover, a.home-tile:focus { text-decoration: none }
 .news-meta {
   color: var(--muted);
   font-size: 13px;
-  margin-top: 8px; 
+  margin-top: 8px;
   /* Flows next to image if space permits */
 }
 
 @media (min-width: 900px) {
   .news-meta {
-    font-size: 15px; /* Larger font size on desktop */
-    margin-top: 8px; /* Lower date to increase separation */
+    font-size: 15px;
+    /* Larger font size on desktop */
+    margin-top: 8px;
+    /* Lower date to increase separation */
   }
 }
 
@@ -926,7 +1077,8 @@ a.home-tile:hover, a.home-tile:focus { text-decoration: none }
 
 @media (min-width: 900px) {
   .news-excerpt {
-    font-size: 17px; /* Larger font size on desktop */
+    font-size: 17px;
+    /* Larger font size on desktop */
     line-height: 1.5;
     margin-top: 10px;
   }
@@ -942,14 +1094,22 @@ a.home-tile:hover, a.home-tile:focus { text-decoration: none }
 
 @media (min-width: 900px) {
   .news-more-link {
-    font-size: 16px; /* Larger font size on desktop */
-    margin-top: 14px; /* More spacing */
+    font-size: 16px;
+    /* Larger font size on desktop */
+    margin-top: 14px;
+    /* More spacing */
   }
 }
 
 /* Force any anchor inside latest-news to be high-contrast (avoid blue-on-dark) */
-.latest-news a { color: var(--text); }
-.latest-news a:hover { color: var(--text); text-decoration: underline; }
+.latest-news a {
+  color: var(--text);
+}
+
+.latest-news a:hover {
+  color: var(--text);
+  text-decoration: underline;
+}
 
 /* Responsive flex for news items - show 2.5 items for peek effect and larger text */
 @media (min-width: 900px) {
@@ -957,8 +1117,10 @@ a.home-tile:hover, a.home-tile:focus { text-decoration: none }
     /* Show 2.5 items: (100% - 1 gap) / 2.5 = ~40% per item */
     /* This creates a peek effect where the 3rd item is half-visible */
     /* Larger items = larger text and better readability */
-    flex: 0 0 calc((100% - 18px) / 2.5); /* 1 gap (18px) between 2 items, divided by 2.5 */
-    min-width: 0; /* Allow shrinking */
+    flex: 0 0 calc((100% - 18px) / 2.5);
+    /* 1 gap (18px) between 2 items, divided by 2.5 */
+    min-width: 0;
+    /* Allow shrinking */
   }
 }
 

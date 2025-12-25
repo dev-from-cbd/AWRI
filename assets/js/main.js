@@ -229,28 +229,26 @@ function initNewsCarousels() {
     const prevBtn = wrapper.querySelector('.news-nav-prev');
     const nextBtn = wrapper.querySelector('.news-nav-next');
     if (!container || !list || !prevBtn || !nextBtn) return;
-    const state = { itemsPerView: 1, totalItems: list.querySelectorAll('.news-item').length, currentIndex: 0 };
+    const state = { itemsPerView: 1, totalItems: list.querySelectorAll('.news-item').length, currentIndex: 0, step: 0, maxScroll: 0 };
     function updateItemsPerView() {
       state.itemsPerView = window.innerWidth < 900 ? 1 : 2.5;
-      const visibleFullItems = Math.floor(state.itemsPerView);
-      const maxIndex = Math.max(0, state.totalItems - visibleFullItems);
-      if (state.currentIndex > maxIndex) {
-        state.currentIndex = maxIndex;
-        scrollToIndex(state.currentIndex, false);
-      }
-    }
-    function updateButtons() {
-      const visibleFullItems = Math.floor(state.itemsPerView);
-      const maxIndex = Math.max(0, state.totalItems - visibleFullItems);
-      prevBtn.disabled = state.currentIndex <= 0;
-      nextBtn.disabled = state.currentIndex >= maxIndex;
-    }
-    function scrollToIndex(index, animate) {
       const firstItem = list.querySelector('.news-item');
       if (!firstItem) return;
       const gap = parseInt(window.getComputedStyle(list).gap) || 18;
-      const itemWidth = firstItem.offsetWidth;
-      const amount = index * (itemWidth + gap);
+      state.step = firstItem.offsetWidth + gap;
+      state.maxScroll = Math.max(0, list.scrollWidth - container.clientWidth);
+      const maxIndex = Math.ceil(state.maxScroll / (state.step || 1));
+      if (state.currentIndex > maxIndex) state.currentIndex = maxIndex;
+      scrollToIndex(state.currentIndex, false);
+    }
+    function updateButtons() {
+      const atStart = state.currentIndex <= 0;
+      const atEnd = (state.currentIndex * state.step) >= (state.maxScroll - 1);
+      prevBtn.disabled = atStart;
+      nextBtn.disabled = atEnd;
+    }
+    function scrollToIndex(index, animate) {
+      const amount = Math.min(index * (state.step || 0), state.maxScroll);
       list.style.transition = animate ? 'transform 0.4s ease' : 'none';
       list.style.transform = `translateX(-${amount}px)`;
       updateButtons();
