@@ -754,6 +754,8 @@ a.home-tile:hover, a.home-tile:focus { text-decoration: none }
 .layout .latest-news a { color: #24314a; }
 .layout .latest-news a:hover { color: #24314a; text-decoration: underline; }
 .layout .latest-news .news-title { color: #24314a; }
+.layout .latest-news .news-meta { color: #3b4c6a; }
+.layout .latest-news .news-excerpt { color: #24314a; }
 
 /* News carousel wrapper and navigation */
 .news-carousel-wrapper {
