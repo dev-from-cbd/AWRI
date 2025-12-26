@@ -768,7 +768,7 @@ a.home-tile:focus {
 }
 
 .footer {
-  border-top: 1px solid #d5dbe3;
+  border-top: none;
   margin-top: 0;
   background: #ffffff
 }
