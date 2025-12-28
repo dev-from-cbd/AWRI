@@ -948,7 +948,7 @@ a.home-tile:focus {
   /* Center horizontally */
   margin: 0 auto;
   /* Set padding */
-  padding: 0 24px;
+  padding: 0 24px 40px;
   /* Relative positioning */
   position: relative;
 }
