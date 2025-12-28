@@ -1,1117 +1,1801 @@
 :root {
+  /* Define the background color variable */
   --bg: #0b0f12;
+  /* Define the surface color variable for cards/containers */
   --surface: #12171c;
+  /* Define a secondary surface color variable */
   --surface-2: #171d24;
+  /* Define the main text color variable */
   --text: #eaf0f6;
+  /* Define the muted text color variable */
   --muted: #a7b0bc;
+  /* Define the primary brand color variable */
   --primary: #4ca2ff;
+  /* Define the dark shade of the primary color */
   --primary-700: #2f7de0;
+  /* Define accent color 1 (greenish) */
   --accent-1: #7bd389;
+  /* Define accent color 2 (blueish) */
   --accent-2: #6aa8ff;
+  /* Define accent color 3 (pinkish) */
   --accent-3: #ff7aa2;
+  /* Define accent color 4 (yellowish) */
   --accent-4: #ffd166;
+  /* Define accent color 5 (purplish) */
   --accent-5: #f9c6ff;
+  /* Define accent color 6 (tealish) */
   --accent-6: #8bd3dd;
+  /* Define the border color variable */
   --border: #25303a;
+  /* Define the box shadow variable */
   --shadow: 0 8px 20px rgba(0, 0, 0, .35);
 }
 
+/* Select all elements */
 * {
+  /* Use border-box sizing model */
   box-sizing: border-box
 }
 
+/* Select html and body elements */
 html,
 body {
+  /* Set height to 100% of the viewport */
   height: 100%
 }
 
+/* Select the body element */
 body {
+  /* Remove default margin */
   margin: 0;
+  /* Set the font family stack */
   font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
+  /* Set the background color using the variable */
   background: var(--bg);
+  /* Set the text color using the variable */
   color: var(--text);
 }
 
+/* Select the top bar container */
 .topbar {
+  /* Use flexbox layout */
   display: flex;
+  /* Space items with space between them */
   justify-content: space-between;
+  /* Align items vertically centered */
   align-items: center;
+  /* Set background color */
   background: #2a3a57;
+  /* Set padding */
   padding: 6px 16px
 }
 
+/* Select the left side of the top bar */
 .topbar-left {
+  /* Use flexbox layout */
   display: flex;
+  /* Set gap between items */
   gap: 10px
 }
 
+/* Select social icons */
 .social {
+  /* Set text color to white */
   color: #fff;
+  /* Remove text decoration */
   text-decoration: none;
+  /* Set background color */
   background: #3a4c73;
+  /* Set border radius */
   border-radius: 6px;
+  /* Use inline-flex layout */
   display: inline-flex;
+  /* Align items vertically centered */
   align-items: center;
+  /* Center items horizontally */
   justify-content: center;
+  /* Set width */
   width: 28px;
+  /* Set height */
   height: 28px
 }
 
+/* Select icons inside social links */
 .social i {
+  /* Set font size */
   font-size: 14px
 }
 
+/* Select the right side of the top bar */
 .topbar-right {
+  /* Use flexbox layout */
   display: flex;
+  /* Align items vertically centered */
   align-items: center;
+  /* Set gap between items */
   gap: 14px
 }
 
+/* Select top links */
 .top-link {
+  /* Set text color to white */
   color: #fff;
+  /* Remove text decoration */
   text-decoration: none;
+  /* Set font size */
   font-size: 12px
 }
 
+/* Select input inside searchbox */
 .searchbox input {
+  /* Set background to white */
   background: #fff;
+  /* Remove border */
   border: none;
+  /* Set border radius */
   border-radius: 6px;
+  /* Set padding */
   padding: 6px 10px;
+  /* Set width */
   width: 140px
 }
 
+/* Select the brand bar container */
 .brandbar {
+  /* Use grid layout */
   display: grid;
+  /* Set grid columns */
   grid-template-columns: auto 1fr;
+  /* Align items to the end vertically */
   align-items: end;
+  /* Set gap between items */
   gap: 18px;
+  /* Set background color */
   background: #f0f3f6;
+  /* Set text color */
   color: #24314a;
+  /* Set padding */
   padding: 12px 16px;
+  /* Set bottom border */
   border-bottom: 1px solid #d5dbe3
 }
 
+/* Select the brand group container */
 .brandgroup {
+  /* Use flexbox layout */
   display: flex;
+  /* Align items to the start vertically */
   align-items: flex-start;
+  /* Set gap between items */
   gap: 24px
 }
 
+/* Select the brand mark (logo) */
 .brandmark {
+  /* Display as inline block */
   display: inline-block;
+  /* Set font size */
   font-size: 64px;
+  /* Set font weight */
   font-weight: 800;
+  /* Set line height */
   line-height: 1;
+  /* Set letter spacing */
   letter-spacing: .06em;
+  /* Scale horizontally */
   transform: scaleX(1.08);
+  /* Set transform origin */
   transform-origin: left center;
+  /* Remove text decoration */
   text-decoration: none;
+  /* Inherit text color */
   color: inherit
 }
 
+/* Select the brand text stack */
 .brandstack {
+  /* Use flexbox layout */
   display: flex;
+  /* Stack items vertically */
   flex-direction: column;
+  /* Set gap between items */
   gap: 2px;
+  /* Remove text decoration */
   text-decoration: none;
+  /* Inherit text color */
   color: inherit
 }
 
+/* Select individual brand lines */
 .brandline {
+  /* Set font size */
   font-size: 14px;
+  /* Set font weight */
   font-weight: 600;
+  /* Set line height */
   line-height: 1.05
 }
 
+/* Select the main navigation container */
 .mainnav {
+  /* Use flexbox layout */
   display: flex;
+  /* Set gap between items */
   gap: 14px;
+  /* Align items vertically centered */
   align-items: center;
+  /* Align content to the end */
   justify-content: flex-end;
+  /* Set background to transparent */
   background: transparent;
+  /* Remove padding */
   padding: 0;
 }
 
+/* Select menu links */
 .menu-link {
+  /* Reset appearance */
   appearance: none;
+  /* Set background to transparent */
   background: transparent;
+  /* Set text color */
   color: #24314a;
+  /* Remove border */
   border: none;
+  /* Set border radius */
   border-radius: 6px;
+  /* Set padding */
   padding: 6px 8px;
+  /* Display as inline block */
   display: inline-block;
+  /* Inherit font family */
   font-family: inherit;
+  /* Set font size */
   font-size: 14px;
+  /* Set font weight */
   font-weight: 700;
+  /* Set line height */
   line-height: 1.2;
+  /* Set position relative */
   position: relative;
+  /* Set cursor to pointer */
   cursor: pointer;
+  /* Remove text decoration */
   text-decoration: none
 }
 
+/* Select active menu link */
 .menu-link.active {
+  /* Set background with opacity */
   background: rgba(36, 49, 74, .12);
+  /* Set text color */
   color: #24314a
 }
 
+/* Select hover state of menu link */
 .menu-link:hover {
+  /* Set background with opacity */
   background: rgba(36, 49, 74, .08);
+  /* Remove text decoration */
   text-decoration: none
 }
 
+/* Select menu links inside main navigation */
 .mainnav a.menu-link {
+  /* Remove text decoration */
   text-decoration: none
 }
 
+/* Select the mega menu container */
 .mega {
+  /* Hide by default */
   display: none;
+  /* Fix position relative to viewport */
   position: fixed;
+  /* Align to left edge */
   left: 0;
+  /* Align to right edge */
   right: 0;
+  /* Set top position dynamically */
   top: calc(var(--mega-top, 0px));
+  /* Set z-index */
   z-index: 40;
+  /* Set background to transparent */
   background: transparent;
+  /* Set padding */
   padding: 0 16px
 }
 
+/* Select the mega menu when shown */
 .mega.show {
+  /* Display as block */
   display: block
 }
 
+/* Select the mega menu panel */
 .mega-panel {
+  /* Set max width */
   max-width: 1200px;
+  /* Center horizontally */
   margin: 0 auto;
+  /* Use grid layout */
   display: grid;
+  /* Align items to start */
   align-items: start;
+  /* Define grid columns */
   grid-template-columns: repeat(5, minmax(200px, 1fr));
+  /* Set gap between items */
   gap: 22px;
+  /* Set background color */
   background: #32486f;
+  /* Set text color to white */
   color: #fff;
+  /* Set border radius */
   border-radius: 12px;
+  /* Set box shadow */
   box-shadow: 0 16px 40px rgba(0, 0, 0, .35);
+  /* Set padding */
   padding: 22px 24px;
+  /* Set border */
   border: 1px solid rgba(255, 255, 255, .12);
+  /* Set initial opacity to 0 */
   opacity: 0;
+  /* Set initial transform */
   transform: translateY(-6px);
+  /* Set transition properties */
   transition: opacity .18s ease, transform .18s ease
 }
 
+/* Select the mega panel when shown */
 .mega.show .mega-panel {
+  /* Set opacity to 1 */
   opacity: 1;
+  /* Reset transform */
   transform: translateY(0)
 }
 
+/* Select mega menu columns */
 .mega-col {
+  /* Use flexbox layout */
   display: flex;
+  /* Stack items vertically */
   flex-direction: column;
+  /* Set gap between items */
   gap: 6px
 }
 
+/* Select bottom section of mega menu */
 .mega-bottom {
+  /* Span all columns */
   grid-column: 1 / -1;
+  /* Use display contents */
   display: contents
 }
 
+/* Select bottom items in mega menu */
 .mega-bottom .mega-item.bottom {
+  /* Add top margin */
   margin-top: 10px
 }
 
+/* Position first bottom item */
 .mega-bottom .mega-item.bottom:nth-child(1) {
+  /* Place in column 1 */
   grid-column: 1
 }
 
+/* Position second bottom item */
 .mega-bottom .mega-item.bottom:nth-child(2) {
+  /* Place in column 2 */
   grid-column: 2
 }
 
+/* Position third bottom item */
 .mega-bottom .mega-item.bottom:nth-child(3) {
+  /* Place in column 3 */
   grid-column: 3
 }
 
+/* Select mega menu titles */
 .mega-title {
+  /* Set font weight */
   font-weight: 700;
+  /* Add bottom margin */
   margin-bottom: 8px;
+  /* Transform text to uppercase */
   text-transform: uppercase;
+  /* Set letter spacing */
   letter-spacing: .04em;
+  /* Set font size */
   font-size: 13px;
+  /* Remove text decoration */
   text-decoration: none;
+  /* Inherit color */
   color: inherit;
+  /* Display as block */
   display: block
 }
 
+/* Select links in mega titles */
 .mega-title:link,
 .mega-title:visited {
+  /* Inherit color */
   color: inherit
 }
 
+/* Select mega menu items */
 .mega-item {
+  /* Set text color to white */
   color: #fff;
+  /* Remove text decoration */
   text-decoration: none;
+  /* Display as block */
   display: block;
+  /* Set padding */
   padding: 6px 0;
+  /* Set line height */
   line-height: 1.35;
+  /* Set font size */
   font-size: 14px
 }
 
+/* Select links in mega panel */
 .mega-panel a {
+  /* Transform text to uppercase */
   text-transform: uppercase
 }
 
+/* Select hover state of links in mega panel */
 .mega-panel a:hover {
+  /* Add underline */
   text-decoration: underline
 }
 
+/* Select items with icons on the right */
 .mega-item.icon-right {
+  /* Use flexbox layout */
   display: flex;
+  /* Align items to baseline */
   align-items: baseline;
+  /* Set gap between items */
   gap: 4px
 }
 
+/* Select icons inside right-icon items */
 .mega-item.icon-right i {
+  /* Set text color to white */
   color: #fff;
+  /* Set opacity */
   opacity: .9;
+  /* Set transition for transform */
   transition: transform .15s ease
 }
 
+/* Hover effect for right-icon items */
 .mega-item.icon-right:hover i {
+  /* Move icon slightly right */
   transform: translateX(1px)
 }
 
+/* Select bottom mega items */
 .mega-item.bottom {
+  /* Set font weight */
   font-weight: 700
 }
 
+/* Add arrow to active menu link */
 .menu-link.active::after {
+  /* Empty content */
   content: "";
+  /* Absolute positioning */
   position: absolute;
+  /* Center horizontally */
   left: 50%;
+  /* Adjust transform for centering */
   transform: translateX(-50%);
+  /* Position at bottom */
   bottom: -8px;
+  /* Set width to 0 */
   width: 0;
+  /* Set height to 0 */
   height: 0;
+  /* Transparent left border */
   border-left: 10px solid transparent;
+  /* Transparent right border */
   border-right: 10px solid transparent;
+  /* Colored top border creating triangle */
   border-top: 12px solid #32486f
 }
 
+/* Select services mega menu panel */
 #mega-services .mega-panel {
+  /* Define grid columns */
   grid-template-columns: repeat(5, minmax(220px, 1fr))
 }
 
+/* Select the hero section */
 .hero {
+  /* Relative positioning */
   position: relative;
+  /* Hide overflow */
   overflow: hidden;
+  /* Set background gradient */
   background: linear-gradient(135deg, #0f1419, #0b0f12 60%);
 }
 
+/* Select hero art element */
 .hero-art {
+  /* Set height */
   height: 320px;
+  /* Set background image and gradient */
   background:
     linear-gradient(0deg, rgba(255, 255, 255, .0), rgba(255, 255, 255, .0)),
     url('../images/bg/bg1.png');
+  /* Cover background */
   background-size: cover;
+  /* Position background */
   background-position: center -80px;
+  /* Optimize for change */
   will-change: background-position;
+  /* Set bottom border */
   border-bottom: 1px solid var(--border);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, .25);
 }
 
+/* Select breadcrumb bar */
 .breadcrumb-bar {
+  /* Set background to white */
   background: #ffffff;
+  /* Set text color */
   color: #24314a;
+  /* Set bottom border */
   border-bottom: 1px solid #d5dbe3;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, .08);
 }
 
+/* Select breadcrumb inner container */
 .breadcrumb-inner {
+  /* Set max width */
   max-width: 1200px;
+  /* Center horizontally */
   margin: 0 auto;
+  /* Set padding */
   padding: 14px 24px;
+  /* Set font size */
   font-size: 12px;
+  /* Set letter spacing */
   letter-spacing: .08em;
+  /* Transform text to uppercase */
   text-transform: uppercase;
 }
 
+/* Select breadcrumb links */
 .breadcrumb-inner a {
+  /* Inherit color */
   color: inherit;
+  /* Remove text decoration */
   text-decoration: none;
 }
 
+/* Hover effect for breadcrumb links */
 .breadcrumb-inner a:hover {
+  /* Add underline */
   text-decoration: underline;
 }
 
+/* Select home strip section */
 .home-strip {
+  /* Set background to white */
   background: #ffffff;
+  /* Set text color */
   color: #24314a;
-  border-top: 1px solid #d5dbe3;
+  /* Set bottom border */
   border-bottom: 1px solid #d5dbe3;
 }
 
+/* Select home strip inner container */
 .home-strip-inner {
+  /* Set max width */
   max-width: 1200px;
+  /* Center horizontally */
   margin: 0 auto;
+  /* Set padding */
   padding: 22px 24px 26px;
 }
 
+/* Select home row grid */
 .home-row {
+  /* Use grid layout */
   display: grid;
+  /* Create 6 equal columns */
   grid-template-columns: repeat(6, 1fr);
+  /* Set gap between items */
   gap: 14px;
 }
 
+/* Select home tile */
 .home-tile {
+  /* Use flexbox layout */
   display: flex;
+  /* Stack items vertically */
   flex-direction: column;
+  /* Align items to center */
   align-items: center;
+  /* Set gap between items */
   gap: 10px;
+  /* Remove text decoration */
   text-decoration: none;
 }
 
+/* Select link version of home tile */
 a.home-tile {
+  /* Remove text decoration */
   text-decoration: none
 }
 
+/* Hover/focus state for home tile */
 a.home-tile:hover,
 a.home-tile:focus {
+  /* Remove text decoration */
   text-decoration: none
 }
 
+/* Select home icon circle */
 .home-icon-circle {
+  /* Set width */
   width: 108px;
+  /* Set height */
   height: 108px;
+  /* Make it circular */
   border-radius: 50%;
+  /* Use flexbox layout */
   display: flex;
+  /* Align items vertically centered */
   align-items: center;
+  /* Center items horizontally */
   justify-content: center;
+  /* Set box shadow */
   box-shadow: 0 6px 16px rgba(0, 0, 0, .12);
+  /* Set transitions */
   transition: transform .2s ease, box-shadow .2s ease;
+  /* Relative positioning */
   position: relative;
+  /* Hide overflow */
   overflow: hidden;
 }
 
+/* Select FontAwesome icons inside circle */
 .home-icon-circle .fa-solid {
+  /* Set font size */
   font-size: 48px;
+  /* Set color to white */
   color: #ffffff;
+  /* Set transitions */
   transition: transform .2s ease, opacity .2s ease;
 }
 
+/* Select SVGs inside circle */
 .home-icon-circle svg {
+  /* Set width */
   width: 48px;
+  /* Set height */
   height: 48px;
+  /* Add drop shadow filter */
   filter: drop-shadow(0 1px 1px rgba(0, 0, 0, .2));
 }
 
+/* Specific SVG icon sizes */
 .home-icon-circle svg.icon-grapes {
+  /* Set width */
   width: 90px;
+  /* Set height */
   height: 90px;
 }
 
 .home-icon-circle svg.icon-glass {
+  /* Set width */
   width: 104px;
+  /* Set height */
   height: 104px;
 }
 
 .home-icon-circle svg.icon-flame {
+  /* Set width */
   width: 70px;
+  /* Set height */
   height: 70px;
 }
 
 .home-icon-circle svg.icon-land {
+  /* Set width */
   width: 90px;
+  /* Set height */
   height: 90px;
 }
 
 .home-icon-circle svg.icon-clipboard {
+  /* Set width */
   width: 84px;
+  /* Set height */
   height: 84px;
 }
 
 .home-icon-circle svg.icon-microscope {
+  /* Set width */
   width: 84px;
+  /* Set height */
   height: 84px;
 }
 
+/* Select all children of home icon circle */
 .home-icon-circle>* {
+  /* Relative positioning */
   position: relative;
+  /* Set z-index */
   z-index: 1;
 }
 
+/* Select label inside home tile */
 .home-tile .label {
+  /* Set font size */
   font-size: 12px;
+  /* Set font weight */
   font-weight: 600;
+  /* Align text center */
   text-align: center;
+  /* Set text color */
   color: #24314a;
 }
 
+/* Hover effect for home icon circle */
 .home-tile:hover .home-icon-circle {
+  /* Move up slightly */
   transform: translateY(-3px);
+  /* Increase shadow */
   box-shadow: 0 12px 22px rgba(0, 0, 0, .18);
 }
 
+/* Hover effect for children of home icon circle */
 .home-tile:hover .home-icon-circle>* {
+  /* Scale up */
   transform: scale(1.06);
 }
 
+/* Display grapes icon */
 .home-icon-circle .icon-grapes {
+  /* Display as block */
   display: block;
 }
 
+/* Shine effect pseudo-element */
 .home-icon-circle::after {
+  /* Empty content */
   content: "";
+  /* Absolute positioning */
   position: absolute;
+  /* Cover entire area */
   inset: 0;
+  /* Make circular */
   border-radius: 50%;
+  /* Gradient background */
   background: linear-gradient(115deg, rgba(255, 255, 255, .22), rgba(255, 255, 255, 0) 55%);
+  /* Start off-screen */
   transform: translateX(-120%);
+  /* ignore pointer events */
   pointer-events: none;
 }
 
+/* Define shine animation */
 @keyframes shine {
   to {
+    /* Move to right */
     transform: translateX(140%);
   }
 }
 
+/* Trigger shine animation on hover */
 .home-tile:hover .home-icon-circle::after {
+  /* Run animation */
   animation: shine .9s ease;
 }
 
+/* Inner border pseudo-element */
 .home-icon-circle::before {
+  /* Empty content */
   content: "";
+  /* Absolute positioning */
   position: absolute;
+  /* Inset from edges */
   inset: 8px;
+  /* Make circular */
   border-radius: 50%;
+  /* Inner shadows */
   box-shadow:
     inset 0 0 0 2px rgba(255, 255, 255, .35),
     inset 0 14px 28px rgba(255, 255, 255, .12);
+  /* Set z-index */
   z-index: 0;
 }
 
+/* Viticulture icon background */
 .home-icon--viticulture {
+  /* Radial gradient background */
   background: radial-gradient(100% 100% at 30% 20%, #b7cbea 0%, #8fb0de 60%, #7ea3d7 100%);
 }
 
+/* Winemaking icon background */
 .home-icon--winemaking {
+  /* Radial gradient background */
   background: radial-gradient(100% 100% at 30% 20%, #b66161 0%, #a64545 60%, #8b2f2f 100%);
 }
 
+/* Smoke icon background */
 .home-icon--smoke {
+  /* Radial gradient background */
   background: radial-gradient(100% 100% at 30% 20%, #e49763 0%, #d8782f 60%, #c76525 100%);
 }
 
+/* Sustainable icon background */
 .home-icon--sustainable {
+  /* Radial gradient background */
   background: radial-gradient(100% 100% at 30% 20%, #6b8551 0%, #556c3b 60%, #445630 100%);
 }
 
+/* Projects icon background */
 .home-icon--projects {
+  /* Radial gradient background */
   background: radial-gradient(100% 100% at 30% 20%, #f0ce76 0%, #e0b54a 60%, #d3a441 100%);
 }
 
+/* Innovate icon background */
 .home-icon--innovate {
+  /* Radial gradient background */
   background: radial-gradient(100% 100% at 30% 20%, #d49580 0%, #c57a63 60%, #b66754 100%);
 }
 
+/* Hero content container */
 .hero-content {
+  /* Set max width */
   max-width: 1200px;
+  /* Center horizontally */
   margin: 0 auto;
+  /* Set padding */
   padding: 28px 24px 32px;
 }
 
+/* Auth indicator style */
 .auth-indicator {
+  /* Use inline-flex layout */
   display: inline-flex;
+  /* Align items vertically centered */
   align-items: center;
+  /* Set gap */
   gap: 10px;
+  /* Set color */
   color: var(--muted);
 }
 
+/* Auth indicator SVG color */
 .auth-indicator svg {
+  /* Set color to primary */
   color: var(--primary)
 }
 
+/* Hero heading */
 .hero h1 {
+  /* Set margins */
   margin: 14px 0 6px;
+  /* Set font size */
   font-size: 28px;
+  /* Set line height */
   line-height: 1.25
 }
 
+/* Subheading style */
 .subhead {
+  /* Set margins */
   margin: 0 0 16px;
+  /* Set color */
   color: var(--muted)
 }
 
+/* Hero actions container */
 .hero-actions {
+  /* Use flexbox layout */
   display: flex;
+  /* Set gap */
   gap: 12px
 }
 
+/* Button style */
 .btn {
+  /* Reset appearance */
   appearance: none;
+  /* Remove border */
   border: none;
+  /* Set border radius */
   border-radius: 10px;
+  /* Set padding */
   padding: 10px 14px;
+  /* Set font weight */
   font-weight: 600;
+  /* Set cursor pointer */
   cursor: pointer
 }
 
+/* Primary button style */
 .btn.primary {
+  /* Set background */
   background: var(--primary);
+  /* Set text color */
   color: #06121e
 }
 
+/* Active state for primary button */
 .btn.primary:active {
+  /* Darker background */
   background: var(--primary-700)
 }
 
+/* Layout container */
 .layout {
+  /* Use grid layout */
   display: grid;
+  /* Single column */
   grid-template-columns: 1fr;
+  /* Set gap */
   gap: 0;
+  /* Set max width */
   max-width: 1200px;
+  /* Center horizontally */
   margin: 0 auto;
+  /* Set padding */
   padding: 0 24px;
+  /* Relative positioning */
   position: relative;
 }
 
+/* Layout background pseudo-element */
 .layout::before {
+  /* Empty content */
   content: "";
+  /* Absolute positioning */
   position: absolute;
+  /* Top position */
   top: 0;
+  /* Bottom position */
   bottom: 0;
+  /* Center horizontally */
   left: 50%;
+  /* Adjust transform */
   transform: translateX(-50%);
+  /* Full width */
   width: 100vw;
+  /* White background */
   background: #ffffff;
+  /* Behind content */
   z-index: -1;
 }
 
 /* sidebar styles removed for single-column layout */
 
+/* Content container */
 .content {
+  /* Use flexbox layout */
   display: flex;
+  /* Stack vertically */
   flex-direction: column;
+  /* Set gap */
   gap: 16px
 }
 
+/* Card style */
 .card {
+  /* Set background */
   background: var(--surface);
+  /* Set border */
   border: 1px solid var(--border);
+  /* Set border radius */
   border-radius: 14px;
+  /* Set box shadow */
   box-shadow: var(--shadow);
+  /* Set padding */
   padding: 16px
 }
 
+/* Intro paragraph style */
 .intro p {
+  /* Set color */
   color: var(--muted)
 }
 
+/* Home icons grid */
 .home-icons {
+  /* Use grid layout */
   display: grid;
+  /* 6 columns */
   grid-template-columns: repeat(6, 1fr);
+  /* Set gap */
   gap: 12px;
+  /* Top margin */
   margin-top: 8px
 }
 
+/* Home icon item */
 .home-icon {
+  /* Use flexbox layout */
   display: flex;
+  /* Stack vertically */
   flex-direction: column;
+  /* Align center */
   align-items: center;
+  /* Set gap */
   gap: 8px
 }
 
+/* Icon circle container */
 .icon-circle {
+  /* Set width */
   width: 64px;
+  /* Set height */
   height: 64px;
+  /* Make circular */
   border-radius: 50%;
+  /* Use flexbox layout */
   display: flex;
+  /* Align center */
   align-items: center;
+  /* Justify center */
   justify-content: center;
+  /* Background color */
   background: #d0dae6;
+  /* Text color */
   color: #24314a;
+  /* Font size */
   font-size: 28px
 }
 
+/* Icon label style */
 .icon-label {
+  /* Font size */
   font-size: 12px;
+  /* Color */
   color: var(--muted)
 }
 
+/* Section header style */
 .section-header {
+  /* Use flexbox layout */
   display: flex;
+  /* Align center */
   align-items: center;
+  /* Space between */
   justify-content: space-between;
+  /* Set gap */
   gap: 12px;
+  /* Bottom margin */
   margin-bottom: 10px
 }
 
+/* Filters container */
 .filters {
+  /* Use flexbox layout */
   display: flex;
+  /* Wrap items */
   flex-wrap: wrap;
+  /* Set gap */
   gap: 12px
 }
 
+/* Filter label style */
 .filters label {
+  /* Use flexbox layout */
   display: flex;
+  /* Stack vertically */
   flex-direction: column;
+  /* Set gap */
   gap: 6px;
+  /* Color */
   color: var(--muted);
+  /* Font size */
   font-size: 14px
 }
 
+/* Filter select style */
 .filters select {
+  /* Background color */
   background: var(--surface-2);
+  /* Text color */
   color: var(--text);
+  /* Border */
   border: 1px solid var(--border);
+  /* Border radius */
   border-radius: 10px;
+  /* Padding */
   padding: 8px 10px
 }
 
+/* Charts grid */
 .charts {
+  /* Use grid layout */
   display: grid;
+  /* 3 columns */
   grid-template-columns: repeat(3, 1fr);
+  /* Set gap */
   gap: 14px
 }
 
+/* Chart card style */
 .chart-card {
+  /* Padding */
   padding: 12px;
+  /* Border */
   border: 1px solid var(--border);
+  /* Border radius */
   border-radius: 12px;
+  /* Background */
   background: var(--surface-2)
 }
 
+/* Chart container */
 .chart {
+  /* Height */
   height: 160px;
+  /* Background gradient */
   background: linear-gradient(180deg, rgba(255, 255, 255, .02), transparent)
 }
 
+/* Chart SVG */
 .chart svg {
+  /* Width */
   width: 100%;
+  /* Height */
   height: 100%
 }
 
+/* Chart meta info */
 .chart-meta {
+  /* Color */
   color: var(--muted);
+  /* Font size */
   font-size: 13px;
+  /* Margin */
   margin: 6px 0 0
 }
 
+/* Badge style */
 .badge {
+  /* Display inline block */
   display: inline-block;
+  /* Padding */
   padding: 6px 10px;
+  /* Border radius */
   border-radius: 999px;
+  /* Background */
   background: #1b2430;
+  /* Border */
   border: 1px solid var(--border);
+  /* Color */
   color: var(--muted);
+  /* Font size */
   font-size: 12px
 }
 
+/* List container */
 .list {
+  /* Use flexbox layout */
   display: flex;
+  /* Stack vertically */
   flex-direction: column
 }
 
+/* List item style */
 .list-item {
+  /* Padding */
   padding: 12px;
+  /* Top border */
   border-top: 1px solid var(--border);
+  /* Remove text decoration */
   text-decoration: none;
+  /* Color */
   color: var(--text)
 }
 
+/* First list item */
 .list-item:first-child {
+  /* Remove top border */
   border-top: none
 }
 
+/* List title */
 .list-title {
+  /* Font weight */
   font-weight: 600
 }
 
+/* List meta info */
 .list-meta {
+  /* Color */
   color: var(--muted);
+  /* Font size */
   font-size: 13px
 }
 
+/* KB controls container */
 .kb-controls {
+  /* Use flexbox layout */
   display: flex;
+  /* Gap */
   gap: 12px;
+  /* Align center */
   align-items: center
 }
 
+/* KB search input */
 #kbSearch {
+  /* Flex grow */
   flex: 1;
+  /* Max width */
   max-width: 420px;
+  /* Background */
   background: var(--surface-2);
+  /* Color */
   color: var(--text);
+  /* Border */
   border: 1px solid var(--border);
+  /* Border radius */
   border-radius: 10px;
+  /* Padding */
   padding: 10px
 }
 
+/* Tags container */
 .tags {
+  /* Use flexbox layout */
   display: flex;
+  /* Gap */
   gap: 8px
 }
 
+/* Tag style */
 .tag {
+  /* Background */
   background: var(--surface-2);
+  /* Color */
   color: var(--text);
+  /* Border */
   border: 1px solid var(--border);
+  /* Border radius */
   border-radius: 999px;
+  /* Padding */
   padding: 8px 12px;
+  /* Cursor */
   cursor: pointer
 }
 
+/* Active tag style */
 .tag.active {
+  /* Background */
   background: var(--primary);
+  /* Color */
   color: #06121e;
+  /* Border color */
   border-color: transparent
 }
 
+/* Footer style */
 .footer {
+  /* Remove top border */
   border-top: none;
+  /* Remove top margin */
   margin-top: 0;
+  /* Background */
   background: #ffffff
 }
 
+/* Footer content container */
 .footer-content {
+  /* Max width */
   max-width: 1200px;
+  /* Center margin */
   margin: 0 auto;
+  /* Padding */
   padding: 18px 24px;
+  /* Color */
   color: #24314a;
+  /* Font size */
   font-size: 13px
 }
 
+/* Footer social icons container */
 .footer-social {
+  /* Use flexbox layout */
   display: flex;
+  /* Align center */
   align-items: center;
+  /* Gap */
   gap: 10px;
 }
 
+/* Footer social icon style */
 .footer .social {
+  /* Background */
   background: transparent;
+  /* Color */
   color: #8da0b8;
+  /* Border */
   border: 1px solid #d5dbe3;
 }
 
+/* Hover state for footer social icon */
 .footer .social:hover {
+  /* Color */
   color: #24314a;
+  /* Border color */
   border-color: #24314a;
 }
+
+/* Route container */
 .route {
+  /* Hide by default */
   display: none;
+  /* Background */
   background: #ffffff;
   /* white sides/background below breadcrumbs */
 }
 
+/* Active route */
 .route.active {
+  /* Display block */
   display: block
 }
 
 /* Latest News styles (ensure high-contrast links — no blue on dark backgrounds) */
 .latest-news {
+  /* Max width */
   max-width: 1200px;
+  /* Margins */
   margin: 24px auto 0;
+  /* Padding */
   padding: 22px;
+  /* Background */
   background: var(--surface-2);
+  /* Border radius */
   border-radius: 12px;
+  /* Border */
   border: 1px solid rgba(255, 255, 255, 0.04);
 }
 
+/* Latest news header */
 .latest-news .section-header {
+  /* Text align center */
   text-align: center;
+  /* Padding bottom */
   padding-bottom: 14px;
+  /* Margin bottom */
   margin-bottom: 18px;
+  /* Bottom border */
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
+/* Latest news heading */
 .latest-news .section-header h2 {
+  /* Font size */
   font-size: 30px;
+  /* Font weight */
   font-weight: 800;
+  /* Margin */
   margin: 0 auto 8px;
+  /* Color */
   color: var(--text);
 }
 
 /* White preview theme — sections below breadcrumbs */
 .layout .card,
 .layout .latest-news {
+  /* Background */
   background: #ffffff;
+  /* Border color */
   border-color: #d5dbe3;
+  /* Color */
   color: #24314a;
 }
 
+/* Latest news heading in layout */
 .layout .latest-news .section-header h2 {
+  /* Color */
   color: #24314a;
 }
 
+/* Latest news links in layout */
 .layout .latest-news a {
+  /* Color */
   color: #24314a;
 }
 
+/* Hover state for latest news links */
 .layout .latest-news a:hover {
+  /* Color */
   color: #24314a;
+  /* Text decoration */
   text-decoration: underline;
 }
 
+/* Latest news title */
 .layout .latest-news .news-title {
+  /* Color */
   color: #24314a;
 }
 
+/* Latest news meta */
 .layout .latest-news .news-meta {
+  /* Color */
   color: #3b4c6a;
 }
 
+/* Latest news excerpt */
 .layout .latest-news .news-excerpt {
+  /* Color */
   color: #24314a;
 }
 
 /* News carousel wrapper and navigation */
 .news-carousel-wrapper {
+  /* Relative positioning */
   position: relative;
   /* Position relative for absolute positioned buttons */
+  /* Use flexbox layout */
   display: flex;
   /* Flex layout for buttons and container */
+  /* Align items center */
   align-items: center;
   /* Center align items vertically */
+  /* Gap */
   gap: 12px;
   /* Gap between buttons and container */
 }
 
+/* News carousel container */
 .news-carousel-container {
+  /* Flex grow */
   flex: 1;
   /* Take remaining space */
+  /* Hide overflow */
   overflow: hidden;
   /* Hide overflow for scrolling effect */
+  /* Relative positioning */
   position: relative;
   /* Position relative for scroll container */
+  /* Padding right */
   padding-right: 0;
   /* No padding on mobile */
 }
 
-
-
+/* News list container */
 .news-list {
+  /* Use flexbox layout */
   display: flex;
   /* Flex layout for horizontal scrolling */
+  /* Gap */
   gap: 18px;
   /* Gap between news items */
+  /* Transition */
   transition: transform 0.4s ease;
   /* Smooth scroll transition */
+  /* Will change */
   will-change: transform;
   /* Optimize for animation */
 }
 
 /* Responsive flex for news items - show 2.5 items for peek effect and larger text */
 .news-item {
+  /* Flex basis */
   flex: 0 0 calc(100% - 0px);
+  /* Min width */
   min-width: 0;
+  /* Background */
   background: transparent;
+  /* Border radius */
   border-radius: 10px;
+  /* Padding */
   padding: 18px;
+  /* Border */
   border: 1px solid rgba(255, 255, 255, 0.03);
+  /* Transition */
   transition: background .12s ease, transform .12s ease;
+  /* Display block */
   display: block;
   /* Restore block display for floats */
+  /* Overflow hidden */
   overflow: hidden;
   /* Clear floats */
 }
 
+/* Media query for desktop */
 @media (min-width: 900px) {
   .news-item {
+    /* Padding */
     padding: 24px;
     /* Larger padding on desktop */
   }
 }
 
+/* Hover state for news item */
 .news-item:hover {
+  /* Background */
   background: rgba(255, 255, 255, 0.02);
   /* Hover background */
+  /* Transform */
   transform: translateY(-3px);
   /* Lift on hover */
 }
 
+/* News navigation button */
 .news-nav-btn {
+  /* Background */
   background: var(--surface);
   /* Button background */
+  /* Border */
   border: 1px solid var(--border);
   /* Button border */
+  /* Border radius */
   border-radius: 50%;
   /* Circular button */
+  /* Width */
   width: 44px;
   /* Button width */
+  /* Height */
   height: 44px;
   /* Button height */
+  /* Display important */
   display: flex !important;
   /* Force flex display for icon centering */
+  /* Align items center */
   align-items: center;
   /* Center icon vertically */
+  /* Justify content center */
   justify-content: center;
   /* Center icon horizontally */
+  /* Cursor */
   cursor: pointer;
   /* Pointer cursor */
+  /* Color */
   color: var(--text);
   /* Text color */
+  /* Font size */
   font-size: 18px;
   /* Icon size */
+  /* Transition */
   transition: all 0.2s ease;
   /* Smooth transitions */
+  /* Flex shrink */
   flex-shrink: 0;
   /* Don't shrink buttons */
+  /* Z-index */
   z-index: 10;
   /* Above other content */
+  /* Position relative */
   position: relative;
   /* Position relative for z-index */
+  /* Box shadow */
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
   /* Add shadow for visibility */
 }
 
+/* Hover state for navigation button */
 .news-nav-btn:hover {
+  /* Background */
   background: var(--surface-2);
   /* Hover background */
+  /* Border color */
   border-color: var(--primary);
   /* Hover border color */
+  /* Color */
   color: var(--primary);
   /* Hover icon color */
+  /* Transform */
   transform: scale(1.1);
   /* Slight scale on hover */
 }
 
+/* Active state for navigation button */
 .news-nav-btn:active {
+  /* Transform */
   transform: scale(0.95);
   /* Pressed state */
 }
 
+/* Disabled state for navigation button */
 .news-nav-btn:disabled {
+  /* Opacity */
   opacity: 0.3;
   /* Disabled opacity */
+  /* Cursor */
   cursor: not-allowed;
   /* Disabled cursor */
+  /* Pointer events */
   pointer-events: none;
   /* Disable interactions */
 }
 
 /* Fallback if Font Awesome icons don't load */
 .news-nav-btn i:not([class*="fa-"]) {
+  /* Display none */
   display: none;
   /* Hide if not Font Awesome */
 }
 
+/* Arrow fallback content */
 .news-nav-btn:not(:has(i.fa-solid))::before {
+  /* Content */
   content: "‹";
   /* Show text arrow if no icon */
+  /* Font size */
   font-size: 24px;
   /* Larger text arrow */
+  /* Font weight */
   font-weight: bold;
   /* Bold text */
 }
 
+/* Next arrow fallback content */
 .news-nav-btn.news-nav-next:not(:has(i.fa-solid))::before {
+  /* Content */
   content: "›";
   /* Right arrow for next button */
 }
 
 /* Link container */
 .news-link {
+  /* Display block */
   display: block;
   /* Block to contain title and floated image */
+  /* Color */
   color: var(--text);
+  /* Text decoration */
   text-decoration: none;
 }
 
 /* Image wrapper - Floated Left */
 .news-image-wrapper {
+  /* Float left */
   float: left;
   /* Wrap text around */
+  /* Margin right */
   margin-right: 15px;
   /* 15px right margin */
+  /* Margin bottom */
   margin-bottom: 7px;
   /* 15px bottom margin */
+  /* Margin top */
   margin-top: 5px;
   /* lower image slightly */
+  /* Border radius */
   border-radius: 8px;
+  /* Position relative */
   position: relative;
+  /* Transition */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  /* Width */
   width: 150px;
+  /* Shape outside */
   shape-outside: margin-box;
   /* wrap with uniform offset around the box */
+  /* Shape margin */
   shape-margin: 15px;
   /* equal 15px gap on all sides */
 }
 
 /* Actual image styles — keep original aspect ratio, no cropping */
 .news-image {
+  /* Display block */
   display: block;
+  /* Width */
   width: 150px;
   /* Consistent thumbnail width */
+  /* Height */
   height: auto;
   /* Preserve original aspect ratio */
+  /* Border radius */
   border-radius: 8px;
   /* Match wrapper rounding */
 }
 
 /* Content elements */
 .news-title {
+  /* Color */
   color: var(--text);
+  /* Font weight */
   font-weight: 800;
+  /* Font size */
   font-size: 16px;
+  /* Margin */
   margin: -8px 0 6px 0;
   /* lift first line a bit more */
+  /* Text wrap */
   text-wrap: balance;
   /* Title flows next to floated image */
 }
 
+/* Media query for desktop title */
 @media (min-width: 900px) {
   .news-title {
+    /* Font size */
     font-size: 20px;
     /* Smaller font size on desktop */
+    /* Line height */
     line-height: 1.3;
   }
 }
 
+/* News meta info */
 .news-meta {
+  /* Color */
   color: var(--muted);
+  /* Font size */
   font-size: 13px;
+  /* Margin top */
   margin-top: 8px;
   /* Flows next to image if space permits */
 }
 
+/* Media query for desktop meta */
 @media (min-width: 900px) {
   .news-meta {
+    /* Font size */
     font-size: 15px;
     /* Larger font size on desktop */
+    /* Margin top */
     margin-top: 8px;
     /* Lower date to increase separation */
   }
 }
 
+/* News excerpt */
 .news-excerpt {
+  /* Color */
   color: var(--muted);
+  /* Margin top */
   margin-top: 8px;
+  /* Font size */
   font-size: 15px;
+  /* Line height */
   line-height: 1.45;
   /* Flows next to image, wraps under if long enough */
 }
 
+/* Media query for desktop excerpt */
 @media (min-width: 900px) {
   .news-excerpt {
+    /* Font size */
     font-size: 17px;
     /* Larger font size on desktop */
+    /* Line height */
     line-height: 1.5;
+    /* Margin top */
     margin-top: 10px;
   }
 }
 
+/* More link */
 .news-more-link {
+  /* Color */
   color: var(--accent-4);
+  /* Font weight */
   font-weight: 800;
+  /* Display inline block */
   display: inline-block;
+  /* Margin top */
   margin-top: 10px;
+  /* Font size */
   font-size: 14px;
 }
 
+/* Media query for desktop more link */
 @media (min-width: 900px) {
   .news-more-link {
+    /* Font size */
     font-size: 16px;
     /* Larger font size on desktop */
+    /* Margin top */
     margin-top: 14px;
     /* More spacing */
   }
@@ -1119,11 +1803,15 @@ a.home-tile:focus {
 
 /* Force any anchor inside latest-news to be high-contrast (avoid blue-on-dark) */
 .latest-news a {
+  /* Color */
   color: var(--text);
 }
 
+/* Hover state for latest news anchor */
 .latest-news a:hover {
+  /* Color */
   color: var(--text);
+  /* Text decoration */
   text-decoration: underline;
 }
 
@@ -1133,32 +1821,45 @@ a.home-tile:focus {
     /* Show 2.5 items: (100% - 1 gap) / 2.5 = ~40% per item */
     /* This creates a peek effect where the 3rd item is half-visible */
     /* Larger items = larger text and better readability */
+    /* Flex basis calculation */
     flex: 0 0 calc((100% - 18px) / 2.5);
     /* 1 gap (18px) between 2 items, divided by 2.5 */
+    /* Min width */
     min-width: 0;
     /* Allow shrinking */
   }
 }
 
+/* Mobile responsive styles */
 @media (max-width: 980px) {
   .layout {
+    /* Single column layout */
     grid-template-columns: 1fr
   }
 
+  /* Sidebar style override */
   .sidebar {
+    /* Static position */
     position: static
   }
 
+  /* Charts grid override */
   .charts {
+    /* Single column */
     grid-template-columns: 1fr
   }
 
+  /* Home icons grid override */
   .home-icons {
+    /* 3 columns */
     grid-template-columns: repeat(3, 1fr)
   }
 
+  /* Brandmark override */
   .brandmark {
+    /* Font size */
     font-size: 100px;
+    /* Transform */
     transform: scaleX(1.04)
   }
 }
