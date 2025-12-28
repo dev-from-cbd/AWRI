@@ -581,3 +581,18 @@ if (document.readyState === 'loading') {
   preventTitleWidows();
 // End of if/else block
 }
+
+// Get the back to top button
+const backToTopBtn = document.getElementById('backToTop');
+// Check if the button exists
+if (backToTopBtn) {
+  // Add click event listener
+  backToTopBtn.addEventListener('click', (e) => {
+    // Prevent default anchor jump
+    e.preventDefault();
+    // Scroll to top smoothly
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  // End of event listener
+  });
+// End of if block
+}
